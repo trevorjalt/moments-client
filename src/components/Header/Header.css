@@ -1,0 +1,72 @@
+@keyframes reveal {
+    80%{
+        letter-spacing: 8px;
+    }
+    100% {
+        background-size: 350% 350%;
+    }
+}
+/* @keyframes glow {
+    40% {
+        text-shadow: 0 0 .5vh #fff;
+    }
+} */
+
+.Header {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(5, 5, 5);
+    background: rgba(5, 5, 5, .84);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.Header-Solid {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #050505;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    /* overflow-y: hidden; */
+}
+
+.invisible-icon {
+    width: 42px;
+    margin-right: 3vw;
+    background: rgb(5, 5, 5);
+    background: rgba(5, 5, 5, .84);
+}
+
+.logo {
+    text-decoration: none;
+    background: 50% 100% / 50% 50% no-repeat
+                radial-gradient(ellipse at bottom, #ffffff, transparent, transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 5vh;
+    /* font-family: "Source Sans Pro", sans-serif; */
+    animation: reveal 3000ms ease-in-out forwards 200ms
+} 
+
+
+@media all and (max-width: 300px) {
+    .logo {
+        font-size: 3.7vh;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .logo{
+        font-size: 8vh;
+    }
+}

@@ -1,0 +1,17 @@
+.Footer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    height: 10vh;
+    width: 100vw;
+    left: 0; right: 0; bottom: 0;
+    background-color: #E9EAEC;
+}
+
+.footer-copy {
+    color: #050505;
+    font-size: 1.8vh;
+    margin-left: 3vw;
+}

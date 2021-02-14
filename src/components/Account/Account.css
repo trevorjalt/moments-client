@@ -1,0 +1,22 @@
+.account-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-information {
+    width: 94vw;
+    padding-bottom: 1vh;
+    font-weight: bold;
+}
+
+.account-information-wrapper {
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #E9EAEC;
+    text-align: left;
+}
+
+.update-profile-picture-wrapper {
+    margin: 1vh 0 1vh 0;
+}

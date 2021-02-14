@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body {
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-top: 15vh;
+	color: #050505;
+	min-height: 100%;
+	position: relative;
+	/* overflow: hidden; */
+}
+
+/* body.dialogShowing {
+	overflow-y: hidden;
+} */
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+	  monospace;
+}
+
+.default-image {
+    width: 35vh;
+    /* margin-top: 10vh; */
+    /* margin-bottom: 10vh; */
+}
+
+.error-message {
+	color: #BA3F1D;
+	font-weight: bold;
+}
+
+:focus {
+	outline: 0px
+}
+
+:focus-visible {
+	outline: 5px solid #2683be;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+
+.form-label, .account-label {
+	font-size: 2.2vh;
+	margin-left: 3vw;
+	font-weight: bold;
+	color: #0252A2;
+}
+
+.form-wrapper {
+	text-align:left;
+}
+
+h1 {
+	font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+	/* background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif); */
+	/* background-image: url(https://media.giphy.com/media/SS8pVIhR4vHU2rANmO/giphy.gif); */
+	/* background-size: cover; */
+	/* color: transparent; */
+	/* -moz-background-clip: text; */
+	/* -webkit-background-clip: text; */
+	font-size: 8vh;
+	font-weight: bold;
+	margin-top: 20vh;
+	background: linear-gradient(to right, #DB0F6B 40%, #602182, #3724F9 60%);
+	background-clip: text;
+	color: transparent;
+}
+
+img {
+	width: 100vw;
+}
+
+input, textarea, select {
+    padding: 1vh 0 1vh 0;
+    display: flex;
+	flex-direction: column;
+	background-color: #F2F2F2;
+    width: 100vw;
+	/* height: 5vh; */
+	border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+	font-size: 2.2vh;
+	text-indent: 3vw;
+	margin: 1vh 0 1vh 0;
+	color: #050505;
+}
+
+input:focus, textarea:focus, select:focus {
+	outline: none;
+	background-color: #E9EAEC;
+}
+
+.link-text {
+    font-weight: bold;
+    color: #0252A2;
+    text-decoration: none;
+}
+
+.public-button {
+    width: 25vw;
+    padding: 1vh 0 1vh 0;
+    border-radius: 50px;
+    background-color: #343234;
+    font-size: 2.2vh;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin: 6vh 0 3vh 0;
+}
+
+
+/* html {
+	height: 100%;
+} */
+
+/* main {
+	padding-bottom: 10vh;
+} */
+
+
+/* styling my button */
+
+/* .white-mode {
+	text-decoration: none;
+	padding: 7px 10px;
+	background-color: #122;
+	border-radius: 3px;
+	color: #FFF;
+	transition: .35s ease-in-out;
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+	font-family: "Montserrat";
+}
+
+.white-mode:hover {
+	background-color: #FFF;
+	color: #122;
+} */
+
+/* .no-outline:focus {
+	outline: none;
+} */
+
+@media all and (min-width: 500px) {
+    .default-image {
+        width: 40vh;
+    }
+}
+
+@media all and (min-width: 600px) {
+    button {
+        width: 15vw;
+    }
+}
