@@ -17,6 +17,18 @@ body {
 	overflow-y: hidden;
 } */
 
+.circular-landscape {
+    border-radius: 50%;
+    /* border: solid red; */
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 3vw;
+}
+
+.circular-landscape img {
+    object-fit: cover;
+}
+
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 	  monospace;
@@ -31,6 +43,54 @@ code {
 .error-message {
 	color: #BA3F1D;
 	font-weight: bold;
+}
+
+.feed-container {
+    /* margin-top: 5vh; */
+    background-color: #E9EAEC;
+    width: 100vw;
+    height: 60vh;
+	/* position: relative; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.feed-container img {
+    object-fit: cover;
+    height: 60vh;
+    width: 100vw;
+}
+
+.feed-header {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+	background: white;
+}
+
+.feed-username {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-left: 2vw;
+}
+
+.feed-post-information-wrapper {
+	background: white;
+	margin-bottom: 0;
+	padding-bottom: 1vh;
+}
+
+.feed-wrapper {
+	background: white;
+	
+}
+
+.feed-wrapper img {
+	margin-bottom: 0;
+	padding: 0;
+	top: 0;
 }
 
 :focus {

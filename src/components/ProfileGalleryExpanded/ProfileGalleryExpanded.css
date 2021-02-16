@@ -1,0 +1,76 @@
+.backstripe {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #A7ABB4;
+    border-radius: 5px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+}
+
+.backstripe-horizontal{
+    /* top: 15px; */
+    transform-origin: left center;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    width: 20px
+}
+
+.backstripe-vertical {
+    transform-origin: 0 0;
+    transform: rotate(45deg);
+    width: 20px;
+    margin-left: 1px;
+}
+
+.back-icon {
+    width: 42px;
+    height: 32px;
+    position: relative;
+    transform: rotate(0deg);
+    cursor: pointer;
+    top: 7.2vh;
+    left: 3vw;
+    position: fixed;
+}
+
+.expanded-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #E9EAEC;
+    font: 'Poppins', sans-serif;
+}
+.expanded-navigation {
+    height: 15vh;
+    background: #050505;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+
+.posts-text {
+    font-weight: bold;
+    font-size: 4vh;
+}
+
+.test {
+    position: fixed;
+    left: 3vw;
+
+}
+
+@media all and (min-width: 500px) {
+    .username-logo {
+        font-size: 4vh;
+    }
+}

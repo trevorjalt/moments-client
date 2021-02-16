@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import MomentsContext from '../../contexts/MomentsContext'
-import { buffTo64, NiceDate } from '../Utils/Utils'
 import MomentsApiService from '../../services/moments-api-service'
+import { buffTo64, NiceDate } from '../Utils/Utils'
+import MomentsLogo from './images/moments-logo.png'
 import { format, parseISO } from 'date-fns'
 import './ProfileGallery.css'
 
@@ -11,7 +12,6 @@ export default class ProfileGallery extends Component {
 
     state = {
         error: null,
-        posts: [],
     }
 
     componentDidMount() {
@@ -21,29 +21,52 @@ export default class ProfileGallery extends Component {
             .catch(err => this.setState({ error: err}))
     }
 
+    handleKeyPressed = event => {
+        if (event.key === 'Enter') {
+            this.handleGalleryClick()
+        }
+    }
 
-    renderPosts() {
+    handleGalleryClick = () => {
+        this.context.setExpandUserGalleryTrue()
+    }
+
+
+    renderGallery() {
         const { userPosts } = this.context
 
-        if (userPosts) {
+        if (userPosts.length !== 0) {
             return (
                 userPosts.map((val) => (
-                    <div className='collection' key={val.id}>
+                    <div 
+                        key={val.id}
+                        onClick={this.handleGalleryClick}
+                        onKeyDown={this.handleKeyPressed}
+                        tabIndex='0'
+                        role='button'
+                        aria-label='user-post-clickable'
+                        aria-expanded='false'
+                    >
                         {/* <h4><NiceDate date={parseISO(val.date_created)} /></h4> */}
                         <div className='img-container'>
-                        <img
-                            className='collection-img'
-                            alt={val.name}
-                            src={`data:image/${val.img_type};base64,${buffTo64(val.img_file.data)}`}
-                        />
+                            <img
+                                className='gallery-img'
+                                alt={val.name}
+                                src={`data:image/${val.img_type};base64,${buffTo64(val.img_file.data)}`}
+                            />
                         </div>
                     </div>
                 ))
             )
         } else {
             return (
-                <div>
-                    <span>No posts</span>
+                <div className='no-posts'>
+                    <img
+                            className='moments-icon'
+                            alt='moments-logo'
+                            src={MomentsLogo}
+                    />
+                    <span className='no-posts-text'>no posts yet</span>
                 </div>
             )
         }
@@ -51,9 +74,9 @@ export default class ProfileGallery extends Component {
 
     render() {
         const { error } = this.state
-        console.log('the state of our photos', this.state.photos)
+
         return (
-            <div className='collection-wrapper'>
+            <div className='gallery-wrapper'>
                 <div 
                     role='alert' 
                     className='error-message'
@@ -61,7 +84,7 @@ export default class ProfileGallery extends Component {
                 >
                     {error && <p>{error}</p>}
                 </div>
-                {this.renderPosts()}
+                {this.renderGallery()}
             </div>
         )
     }

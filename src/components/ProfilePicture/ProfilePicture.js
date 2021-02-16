@@ -1,31 +1,33 @@
 import React, { Component } from 'react'
-// import MomentsContext from '../../contexts/MomentsContext'
+import MomentsContext from '../../contexts/MomentsContext'
 import MomentsApiService from '../../services/moments-api-service'
 import ProfilePictureDefault from './images/profile-picture-default.png'
-import { buffTo64 } from '../../components/Utils/Utils'
+import { buffTo64 } from '../Utils/Utils'
 import './ProfilePicture.css'
 
 export default class ProfilePicture extends Component {
-    // static contextType = MomentsContext
+    static contextType = MomentsContext
 
     state = {
         error: null,
-        currentProfilePicture: {}
+        // currentProfilePicture: {}
     }
 
     // this componentDidMount keeps the user profile picture updated after an update
     componentDidMount() {
         // this.context.clearError()
-        // const { setCurrentProfilePicture } = this.context
+        const { setUserProfilePicture } = this.context
+
         MomentsApiService.getProfilePicture()
-            .then(res => this.setState({ currentProfilePicture: res }))
+            // .then(res => this.setState({ currentProfilePicture: res }))
+            .then(res => setUserProfilePicture(res))
             .catch(err => this.setState({ error: err }))
     }
 
     renderProfilePicture() {
-        const { currentProfilePicture } = this.state
+        const { userProfilePicture } = this.context
 
-        if (!currentProfilePicture.length) {
+        if (!userProfilePicture.length) {
             return (
                 <div className='profile-picture'>
                     <img 
@@ -40,7 +42,7 @@ export default class ProfilePicture extends Component {
                 <div className='profile-picture'>
                 <img
                     alt='current-user-profile'
-                    src={`data:image/${currentProfilePicture[0].img_type};base64,${buffTo64(currentProfilePicture[0].img_file.data)}`}
+                    src={`data:image/${userProfilePicture[0].img_type};base64,${buffTo64(userProfilePicture[0].img_file.data)}`}
                     className='profile-picture-scale'
                 />
                 </div>

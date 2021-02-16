@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 
 const MomentsContext = React.createContext({
-    // currentProfilePicture: {},
     data: false,
+    expandUserGallery: false,
     showCaptionInput: false,
     userPosts: [],
-    // setCurrentProfilePicture: () => { },
+    userProfilePicture: {},
     setDataFalse: () => { },
     setDataTrue: () => { },
+    setExpandUserGalleryFalse: () => { },
+    setExpandUserGalleryTrue: () => { },
     setShowCaptionInputFalse: () => { },
     setShowCaptionInputTrue: () => { },
     setUserPosts: () => { },
+    setUserProfilePicture: () => { },
 
 })
 
@@ -18,16 +21,13 @@ export default MomentsContext
 
 export class MomentsProvider extends Component {
     state = {
-        // currentProfilePicture: {},
         data: null,
+        expandUserGallery: false,
         showCaptionInput: false,
         userPosts: [],
+        userProfilePicture: {},
         
     }
-
-    // setCurrentProfilePicture = currentProfilePicture => {
-    //     this.setState({ currentProfilePicture })
-    // }
 
     setDataFalse = () => {
         this.setState({ data: false })
@@ -35,6 +35,14 @@ export class MomentsProvider extends Component {
 
     setDataTrue = () => {
         this.setState({ data: true })
+    }
+
+    setExpandUserGalleryFalse = () => {
+        this.setState({ expandUserGallery: false })
+    }
+
+    setExpandUserGalleryTrue = () => {
+        this.setState({ expandUserGallery: true })
     }
 
     setShowCaptionInputFalse = () => {
@@ -49,18 +57,26 @@ export class MomentsProvider extends Component {
         this.setState({ userPosts })
     }
 
+    setUserProfilePicture = userProfilePicture => {
+        console.log('Setting user profile picture')
+        this.setState({ userProfilePicture })
+    }
+
     render() {
         const value = {
-            // currentProfilePicture: this.state.currentProfilePicture,
             data: this.state.data,
+            expandUserGallery: this.state.expandUserGallery,
             showCaptionInput: this.state.showCaptionInput,
             userPosts: this.state.userPosts,
-            // setCurrentProfilePicture: this.setCurrentProfilePicture,
+            userProfilePicture: this.state.userProfilePicture,
             setDataFalse: this.setDataFalse,
             setDataTrue: this.setDataTrue,
+            setExpandUserGalleryFalse: this.setExpandUserGalleryFalse,
+            setExpandUserGalleryTrue: this.setExpandUserGalleryTrue,
             setShowCaptionInputFalse: this.setShowCaptionInputFalse,
             setShowCaptionInputTrue: this.setShowCaptionInputTrue,
             setUserPosts: this.setUserPosts,
+            setUserProfilePicture: this.setUserProfilePicture,
         }
         return (
             <MomentsContext.Provider value={value}>

@@ -22,17 +22,15 @@
     /* width: 100vw;*/
 }
 
-.uploader-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    width: 100vw;
-    height: 20vh;
-}
-
 .upload-error {
     font-size: 2vh;
+}
+
+.upload-image-preview img {
+    object-fit: cover;
+    height: 60vh;
+    width: 100vw;
+
 }
 
 .upload-preview {
@@ -46,15 +44,17 @@
     justify-content: center;
 }
 
-.upload-image-preview img {
-    object-fit: cover;
-    height: 60vh;
-    width: 100vw;
-
-}
-
 .upload-selector-button {
     width: 9vh;
     cursor: pointer;
     margin-top: 2vh;
+}
+
+.uploader-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+    height: 20vh;
 }

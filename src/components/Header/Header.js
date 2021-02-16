@@ -10,6 +10,8 @@ export default class Header extends Component {
     static contextType = UserAndNavContext
 
     render() {
+        const { user } = this.context
+
         return (
             <header role='banner'>
                 <div className={this.context.showNav
@@ -24,7 +26,7 @@ export default class Header extends Component {
                         >
                             moments
                         </Link>
-                    </h1>
+                    </h1>                  
                     {TokenService.hasAuthToken()
                         ?   <Link
                                 to='/post-upload'

@@ -1,4 +1,8 @@
-.collection-wrapper {
+.gallery-img {
+    object-fit: cover;
+} 
+
+.gallery-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -9,11 +13,29 @@
     height: 32.9vw;
     width: 32.9vw;
     margin: 0 .2vw 0 .2vw;
-} 
+}
 
-.collection-img {
-    object-fit: cover;
-} 
+.moments-icon {
+    height: 15vw;
+    width: 15vw;
+    margin-bottom: 3vw;
+}
+
+.no-posts {
+    width: 100vw;
+    background: #E9EAEC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vw;
+}
+
+.no-posts-text {
+    font-weight: bold;
+    font-size: 3.5vh;
+}
+
 
 @media all and (min-width: 600px) {
     .img-container img{

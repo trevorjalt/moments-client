@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import MomentsContext from '../../contexts/MomentsContext'
+import UserAndNavContext from '../../contexts/UserAndNavContext'
 import { buffTo64, NiceDate } from '../../components/Utils/Utils'
 import MomentsApiService from '../../services/moments-api-service'
 import { format, parseISO } from 'date-fns'
+import ProfileGalleryExpanded from '../../components/ProfileGalleryExpanded/ProfileGalleryExpanded'
 
 
 export default class Feed extends Component {
@@ -82,6 +84,11 @@ export default class Feed extends Component {
                 {this.renderPhotos()}
                 <button onClick={this.handleGetPostPhoto}>Click Me For Post Test</button>
                 {this.renderPosts()}
+                {/* <UserAndNavContext.Consumer>
+                    {user => (
+                        <ProfileGalleryExpanded user={user} />
+                    )}
+                </UserAndNavContext.Consumer> */}
             </div>
         );
     };

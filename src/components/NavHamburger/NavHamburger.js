@@ -41,7 +41,7 @@ export default class NavHamburger extends Component {
                 tabIndex='0'
                 role='button'
                 aria-label='navigation-menu-clickable'
-                aria-expanded='true'
+                aria-expanded='false'
             >
                 <span className='hamburger-stripe-top hamburger-stripe-top-open hamburger-stripe' />
                 <span className='hamburger-stripe-bottom hamburger-stripe-bottom-open hamburger-stripe' />
