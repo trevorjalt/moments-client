@@ -19,10 +19,10 @@ export default class ProfilePicture extends Component {
         // const { setCurrentProfilePicture } = this.context
         MomentsApiService.getProfilePicture()
             .then(res => this.setState({ currentProfilePicture: res }))
-            // .catch(this.setState)
+            .catch(err => this.setState({ error: err }))
     }
 
-    render() {
+    renderProfilePicture() {
         const { currentProfilePicture } = this.state
 
         if (!currentProfilePicture.length) {
@@ -46,5 +46,24 @@ export default class ProfilePicture extends Component {
                 </div>
             )
         }
+
+    }
+
+    render() {
+        const { error } = this.state
+
+        return (
+            <div>
+                <div 
+                    role='alert' 
+                    className='error-message'
+                    aria-live='assertive'
+                >
+                    {error && <p>{error}</p>}
+                </div>
+                {this.renderProfilePicture()}
+            </div>
+        )
+        
     }
 }
