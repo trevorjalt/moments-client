@@ -43,7 +43,6 @@ export default class RegistrationForm extends Component {
                 about_user: about_user.value,
                 privacy: privacy.value
             })
-                // .then(req => console.log(req))
                 .then(user => {
                     fullname.value = ''
                     username.value = ''

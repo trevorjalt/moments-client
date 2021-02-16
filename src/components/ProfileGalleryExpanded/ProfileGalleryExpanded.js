@@ -9,23 +9,49 @@ import './ProfileGalleryExpanded.css'
 export default class ProfileGalleryExpanded extends Component {
     static contextType = MomentsContext
 
+    constructor(props) {
+        super(props)
+        this.divToFocus = []
+    }
+
     state = {
         error: null,
     }
 
-    // componentDidMount() {
-    //     const { setUserPosts } = this.context
-    //     MomentsApiService.getPostPhoto()
-    //         .then(res => setUserPosts(res))
-    //         .catch(err => this.setState({ error: err}))
-    // }
+    componentDidMount() {
+        const { expandedId } = this.context
+        this.setState({expandedId: expandedId })
+    }
+
+    componentDidUpdate() {
+        this.handleScroll()
+    }
 
     handleClickBack = () => {
         this.context.setExpandUserGalleryFalse()
     }
 
+    handleKeyPressed = event => {
+        if (event.key === 'Enter') {
+            this.handleClickBack()
+        }
+    }
+
+    handleScroll = () => {
+        const { expandedId } = this.context
+        let divObject = this.divToFocus.find(obj => obj.id === expandedId)
+
+        if (divObject.ref !== undefined) {
+            divObject.ref.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            })
+        }
+    }
+
     renderExpandedNav() {
         const { user } = this.props
+
         return (
             <div className='expanded-navigation'>
                 <div
@@ -52,13 +78,12 @@ export default class ProfileGalleryExpanded extends Component {
     renderGalleryExpanded() {
         const { userPosts, userProfilePicture, expandUserGallery } = this.context
         const { user } = this.props
-        console.log(user.user.username)
-        console.log('userprofilepic', userProfilePicture)
 
         if (expandUserGallery === true) {
             return (
-                userPosts.map((val) => (
-                    <div key={val.id} className='feed-wrapper'>
+                userPosts.map((val, index) => (
+                    
+                    <div key={val.id} className='feed-wrapper' ref={ref => this.divToFocus[index] = {ref, id: val.id}}>
                         <div className='feed-header'>
                             <img
                                 alt='current-user-profile-picture'

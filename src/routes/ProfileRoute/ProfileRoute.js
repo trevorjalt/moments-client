@@ -16,7 +16,7 @@ export default class ProfileRoute extends Component {
 
     render() {
         const { expandUserGallery } = this.context
-        // console.log('expand', expandUserGallery)
+
         if (expandUserGallery === false) {
             return (
                 <section className='profile-route'>

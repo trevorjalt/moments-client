@@ -19,10 +19,8 @@ export default class ProfilePictureForm extends Component {
     // patch request for the existing profile picture.  If it doesn't, the client makes 
     // a post request. 
     componentDidMount() {
-        // this.context.clearError()
         MomentsApiService.getProfilePicture()
             .then(res => this.setState({ currentProfilePicture: res }))
-            // .catch(this.setState)
     }
 
     handleSubmit = (ev) => {
@@ -33,7 +31,6 @@ export default class ProfilePictureForm extends Component {
 
         if (!currentProfilePicture.length) {
             MomentsApiService.postProfilePicture(ev.target)
-                // .then(setCurrentProfilePicture())
                 .then(() => this.props.history.push('/account'))
                 .then(setDataFalse())
                 .catch(error => {
@@ -41,7 +38,6 @@ export default class ProfilePictureForm extends Component {
                 })
         } else {
             MomentsApiService.updateProfilePicture(ev.target, currentProfilePicture[0].id)
-                // .then(setCurrentProfilePicture())
                 .then(() => this.props.history.push('/account'))
                 .then(setDataFalse())
                 .catch(error => {
@@ -53,8 +49,6 @@ export default class ProfilePictureForm extends Component {
     render() {
         const { error } = this.state
         const { data } = this.context
-        // const currentProfilePicture = this.state.currentProfilePicture
-        // console.log('ProfilePic', currentProfilePicture)
 
         return (
             <form

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 const MomentsContext = React.createContext({
     data: false,
     expandUserGallery: false,
+    expandedId: null,
     showCaptionInput: false,
     userPosts: [],
     userProfilePicture: {},
@@ -23,6 +24,7 @@ export class MomentsProvider extends Component {
     state = {
         data: null,
         expandUserGallery: false,
+        expandedId: null,
         showCaptionInput: false,
         userPosts: [],
         userProfilePicture: {},
@@ -41,8 +43,11 @@ export class MomentsProvider extends Component {
         this.setState({ expandUserGallery: false })
     }
 
-    setExpandUserGalleryTrue = () => {
-        this.setState({ expandUserGallery: true })
+    setExpandUserGalleryTrue = (id) => {
+        this.setState({ 
+            expandUserGallery: true,
+            expandedId: id,
+        })
     }
 
     setShowCaptionInputFalse = () => {
@@ -58,7 +63,6 @@ export class MomentsProvider extends Component {
     }
 
     setUserProfilePicture = userProfilePicture => {
-        console.log('Setting user profile picture')
         this.setState({ userProfilePicture })
     }
 
@@ -66,6 +70,7 @@ export class MomentsProvider extends Component {
         const value = {
             data: this.state.data,
             expandUserGallery: this.state.expandUserGallery,
+            expandedId: this.state.expandedId,
             showCaptionInput: this.state.showCaptionInput,
             userPosts: this.state.userPosts,
             userProfilePicture: this.state.userProfilePicture,

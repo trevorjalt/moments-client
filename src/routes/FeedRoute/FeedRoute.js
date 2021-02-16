@@ -76,7 +76,6 @@ export default class Feed extends Component {
     }
 
     render() {
-        console.log('the state of our photos', this.state.photos)
         return (
             <div>
                 <h2>The Feed</h2>

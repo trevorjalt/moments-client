@@ -12,14 +12,11 @@ export default class PostForm extends Component {
 
     state = {
         error: null,
-        // currentProfilePicture: {},
         showSubmit: null,
     }
 
     handleSubmit = (ev) => {
         ev.preventDefault()
-        // const currentProfilePicture= this.state.currentProfilePicture
-        console.log('EVENT TARGET', ev.target.value)
         const { setDataFalse, setShowCaptionInputFalse } = this.context
 
             MomentsApiService.postPostPhoto(ev.target)
@@ -48,8 +45,6 @@ export default class PostForm extends Component {
     render() {
         const { error, showSubmit } = this.state
         const { data, showCaptionInput } = this.context
-        // const currentProfilePicture = this.state.currentProfilePicture
-        // console.log('ProfilePic', currentProfilePicture)
 
         return (
             <form

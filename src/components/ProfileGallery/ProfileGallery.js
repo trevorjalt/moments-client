@@ -27,10 +27,9 @@ export default class ProfileGallery extends Component {
         }
     }
 
-    handleGalleryClick = () => {
-        this.context.setExpandUserGalleryTrue()
+    handleGalleryClick = (id) => {
+        this.context.setExpandUserGalleryTrue(id)
     }
-
 
     renderGallery() {
         const { userPosts } = this.context
@@ -40,12 +39,13 @@ export default class ProfileGallery extends Component {
                 userPosts.map((val) => (
                     <div 
                         key={val.id}
-                        onClick={this.handleGalleryClick}
+                        onClick={() => this.handleGalleryClick(val.id)}
                         onKeyDown={this.handleKeyPressed}
                         tabIndex='0'
                         role='button'
                         aria-label='user-post-clickable'
                         aria-expanded='false'
+                        ref={this.divToFocus}
                     >
                         {/* <h4><NiceDate date={parseISO(val.date_created)} /></h4> */}
                         <div className='img-container'>

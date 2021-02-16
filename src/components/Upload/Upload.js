@@ -105,7 +105,7 @@ export default class Upload extends Component {
 
     render() {
         const { error } = this.state
-        // console.log('error', error)
+
         return (
             <div className='uploader'>
                 <div className='upload-preview'>
