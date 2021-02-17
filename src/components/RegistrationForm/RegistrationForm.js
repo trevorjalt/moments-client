@@ -17,7 +17,7 @@ export default class RegistrationForm extends Component {
 
     firstInput = React.createRef()
 
-    handleSubmit = ev => {
+    handleSubmit = (ev) => {
         ev.preventDefault()
 
         const { 

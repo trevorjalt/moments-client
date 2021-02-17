@@ -47,7 +47,7 @@ const MomentsApiService = {
             )
     },
 
-    getPostPhoto() {
+    getUserPostPhoto() {
         return fetch(`${config.API_ENDPOINT}/post-photo/download`, {
             method: "GET",
             headers: {
@@ -72,7 +72,20 @@ const MomentsApiService = {
             .then(res =>
                 (!res.ok)
                     ? res.json().then(event => Promise.reject(event))
-                    : res
+                    : res.json()
+            )
+    },
+
+    getUserCaption() {
+        return fetch (`${config.API_ENDPOINT}/post-caption`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },            
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
             )
     },
 }

@@ -7,6 +7,7 @@ import { format, parseISO } from 'date-fns'
 import ProfileGalleryExpanded from '../../components/ProfileGalleryExpanded/ProfileGalleryExpanded'
 
 
+
 export default class Feed extends Component {
     static contextType = MomentsContext
 
@@ -28,7 +29,7 @@ export default class Feed extends Component {
     handleGetPostPhoto = ev => {
         ev.preventDefault()
 
-        MomentsApiService.getPostPhoto()
+        MomentsApiService.getUserPostPhoto()
             .then(res => this.setState({ posts: res }))
             .catch((err) => {
                 console.log("Went Wrong", err);

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import MomentsContext from '../../contexts/MomentsContext'
 import { buffTo64, NiceDate } from '../Utils/Utils'
-import MomentsApiService from '../../services/moments-api-service'
-import { format, parseISO } from 'date-fns'
+import { parseISO } from 'date-fns'
+import ProfilePictureDefault from '../ProfilePicture/images/profile-picture-default.png'
 import './ProfileGalleryExpanded.css'
+
 
 
 export default class ProfileGalleryExpanded extends Component {
@@ -20,7 +21,8 @@ export default class ProfileGalleryExpanded extends Component {
 
     componentDidMount() {
         const { expandedId } = this.context
-        this.setState({expandedId: expandedId })
+
+        this.setState({ expandedId })
     }
 
     componentDidUpdate() {
@@ -31,8 +33,8 @@ export default class ProfileGalleryExpanded extends Component {
         this.context.setExpandUserGalleryFalse()
     }
 
-    handleKeyPressed = event => {
-        if (event.key === 'Enter') {
+    handleKeyPressed = (ev) => {
+        if (ev.key === 'Enter') {
             this.handleClickBack()
         }
     }
@@ -46,6 +48,25 @@ export default class ProfileGalleryExpanded extends Component {
                 behavior: 'smooth',
                 block: 'start',
             })
+        }
+    }
+
+    renderCaption(props) {
+        const { userCaptions = [] } = this.context
+        const { user } = this.props
+        let caption = userCaptions.find(el => el.post_photo_id === props)
+
+        if (caption) {
+            return (
+                <div>
+                    <span className='caption-username'>
+                        {user.user.username}
+                    </span>
+                    <span>
+                        {caption.caption}
+                    </span>
+                </div>
+            )
         }
     }
 
@@ -78,20 +99,31 @@ export default class ProfileGalleryExpanded extends Component {
     renderGalleryExpanded() {
         const { userPosts, userProfilePicture, expandUserGallery } = this.context
         const { user } = this.props
-
+ 
         if (expandUserGallery === true) {
             return (
                 userPosts.map((val, index) => (
                     
                     <div key={val.id} className='feed-wrapper' ref={ref => this.divToFocus[index] = {ref, id: val.id}}>
-                        <div className='feed-header'>
-                            <img
-                                alt='current-user-profile-picture'
-                                src={`data:image/${userProfilePicture[0].img_type};base64,${buffTo64(userProfilePicture[0].img_file.data)}`}
-                                className='feed-profile-picture circular-landscape'
-                            />
-                            <span className='feed-username'>{user.user.username}</span>
-                        </div>
+                            {userProfilePicture.length !== 0
+                                ? <div className='feed-header'>
+                                    <img
+                                        alt='current-user-profile-picture'
+                                        src={`data:image/${userProfilePicture[0].img_type};base64,${buffTo64(userProfilePicture[0].img_file.data)}`}
+                                        className='feed-profile-picture circular-landscape'
+                                    />
+                                    <span className='feed-username'>{user.user.username}</span>
+                                </div>
+                                : <div className='feed-header'>
+                                    <img 
+                                        className='feed-profile-picture circular-landscape'
+                                        src={ProfilePictureDefault} 
+                                        alt='default-user-profile'
+                                    />
+                                    <span className='feed-username'>{user.user.username}</span>
+                                </div>
+                                
+                            }
                         <div className='feed-container'>
                             <img                               
                                 alt={val.name}
@@ -99,16 +131,24 @@ export default class ProfileGalleryExpanded extends Component {
                             />
                         </div>
                         <div className='feed-post-information-wrapper'>
-                        <h4><NiceDate date={parseISO(val.date_created)} /></h4>
+                            <div className='caption-wrapper'>
+                                {this.renderCaption(val.id)}
+                            </div>
+                            <div className='date-wrapper'>
+                                <span className='caption-date'>
+                                    <NiceDate date={parseISO(val.date_created)} />
+                                </span>
+                            </div>
                         </div>
                     </div>
-                    ))
-                )
+                ))
+            )
         }
     }
 
     render() {
         const { error } = this.state
+
         return (
             <div>
                 <div 

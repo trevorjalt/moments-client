@@ -17,6 +17,32 @@ body {
 	overflow-y: hidden;
 } */
 
+/* .caption-collapsed {
+	height: 5.6vh;
+	overflow: auto;
+} */
+
+.caption-date {
+	padding: 1vh 0 10vh 0;
+	margin: 0 0 0 3vw;
+	font-size: 1.9vh;
+	color: #6A6E7C;
+}
+
+.caption-username {
+	font-weight: bold;
+	margin-right: 1vw;
+}
+
+.caption-wrapper {
+	display: flex;
+	flex-direction: row;
+	/* flex-wrap: wrap; */
+	margin: 3vh 3vw 1vh 3vw;
+	/* font-size: 3.3vw; */
+	text-align: left;
+}
+
 .circular-landscape {
     border-radius: 50%;
     /* border: solid red; */
@@ -32,6 +58,10 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 	  monospace;
+}
+
+.date-wrapper {
+	margin-bottom: 2vh;
 }
 
 .default-image {
@@ -80,6 +110,7 @@ code {
 	background: white;
 	margin-bottom: 0;
 	padding-bottom: 1vh;
+	text-align: left;
 }
 
 .feed-wrapper {

@@ -5,8 +5,8 @@ import './NavNewPost.css'
 export default class NavNewPost extends Component {
     // static contextType = UserAndNavContext
 
-    handleKeyPressed = event => {
-        if (event.key === 'Enter') {
+    handleKeyPressed = (ev) => {
+        if (ev.key === 'Enter') {
             // this.handleNavClick()
             // this.context.setShowNav()
         }

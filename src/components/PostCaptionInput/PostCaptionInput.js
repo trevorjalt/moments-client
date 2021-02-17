@@ -24,13 +24,14 @@ export default class PostCaption extends Component {
                         // className='caption-label'
                     />
                     <textarea
-                        id='caption-input'
-                        name='caption-input'
+                        id='caption_input'
+                        name='caption_input'
                         type='text'
                         className='caption-input'
                         placeholder='Add a caption for your moment'
                         aria-required='true'
                         autoComplete='off'
+                        maxLength='500'
                     >
                     </textarea>
                 </div>

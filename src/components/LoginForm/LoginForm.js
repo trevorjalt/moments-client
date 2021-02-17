@@ -14,7 +14,7 @@ export default class LoginForm extends Component {
 
     firstInput = React.createRef()
 
-    handleSubmit = ev => {
+    handleSubmit = (ev) => {
         ev.preventDefault()
 
         const { username, user_password } = ev.target

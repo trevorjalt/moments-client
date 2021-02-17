@@ -5,8 +5,8 @@ import './NavHamburger.css'
 export default class NavHamburger extends Component {
     static contextType = UserAndNavContext
 
-    handleKeyPressed = event => {
-        if (event.key === 'Enter') {
+    handleKeyPressed = (ev) => {
+        if (ev.key === 'Enter') {
             this.handleNavClick()
             // this.context.setShowNav()
         }

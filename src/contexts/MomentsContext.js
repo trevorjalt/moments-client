@@ -5,6 +5,7 @@ const MomentsContext = React.createContext({
     expandUserGallery: false,
     expandedId: null,
     showCaptionInput: false,
+    userCaptions: [],
     userPosts: [],
     userProfilePicture: {},
     setDataFalse: () => { },
@@ -13,6 +14,7 @@ const MomentsContext = React.createContext({
     setExpandUserGalleryTrue: () => { },
     setShowCaptionInputFalse: () => { },
     setShowCaptionInputTrue: () => { },
+    setUserCaptions: () => { },
     setUserPosts: () => { },
     setUserProfilePicture: () => { },
 
@@ -26,6 +28,7 @@ export class MomentsProvider extends Component {
         expandUserGallery: false,
         expandedId: null,
         showCaptionInput: false,
+        userCaptions: [],
         userPosts: [],
         userProfilePicture: {},
         
@@ -58,6 +61,10 @@ export class MomentsProvider extends Component {
         this.setState({ showCaptionInput: true })
     }
 
+    setUserCaptions = userCaptions => {
+        this.setState({ userCaptions })
+    }
+
     setUserPosts = userPosts => {
         this.setState({ userPosts })
     }
@@ -72,6 +79,7 @@ export class MomentsProvider extends Component {
             expandUserGallery: this.state.expandUserGallery,
             expandedId: this.state.expandedId,
             showCaptionInput: this.state.showCaptionInput,
+            userCaptions: this.state.userCaptions,
             userPosts: this.state.userPosts,
             userProfilePicture: this.state.userProfilePicture,
             setDataFalse: this.setDataFalse,
@@ -80,6 +88,7 @@ export class MomentsProvider extends Component {
             setExpandUserGalleryTrue: this.setExpandUserGalleryTrue,
             setShowCaptionInputFalse: this.setShowCaptionInputFalse,
             setShowCaptionInputTrue: this.setShowCaptionInputTrue,
+            setUserCaptions: this.setUserCaptions,
             setUserPosts: this.setUserPosts,
             setUserProfilePicture: this.setUserProfilePicture,
         }

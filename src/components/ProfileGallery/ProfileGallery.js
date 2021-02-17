@@ -15,14 +15,18 @@ export default class ProfileGallery extends Component {
     }
 
     componentDidMount() {
-        const { setUserPosts } = this.context
-        MomentsApiService.getPostPhoto()
+        const { setUserPosts, setUserCaptions } = this.context
+        MomentsApiService.getUserPostPhoto()
             .then(res => setUserPosts(res))
             .catch(err => this.setState({ error: err}))
+
+        MomentsApiService.getUserCaption()
+            .then(res => setUserCaptions(res))
+            .catch(err => this.setState({ error: err }))
     }
 
-    handleKeyPressed = event => {
-        if (event.key === 'Enter') {
+    handleKeyPressed = (ev) => {
+        if (ev.key === 'Enter') {
             this.handleGalleryClick()
         }
     }
@@ -47,7 +51,6 @@ export default class ProfileGallery extends Component {
                         aria-expanded='false'
                         ref={this.divToFocus}
                     >
-                        {/* <h4><NiceDate date={parseISO(val.date_created)} /></h4> */}
                         <div className='img-container'>
                             <img
                                 className='gallery-img'

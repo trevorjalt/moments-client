@@ -18,16 +18,15 @@ export default class PostForm extends Component {
     handleSubmit = (ev) => {
         ev.preventDefault()
         const { setDataFalse, setShowCaptionInputFalse } = this.context
-
-            MomentsApiService.postPostPhoto(ev.target)
-                // .then(setCurrentProfilePicture())
-                .then(() => this.props.history.push('/profile'))
-                .then(setDataFalse())
-                .then(setShowCaptionInputFalse())
-                .then(this.setState({ showSubmit: false }))
-                .catch(error => {
-                    this.setState({ error })
-                })
+        
+        MomentsApiService.postPostPhoto(ev.target)
+            .then(() => this.props.history.push('/profile'))
+            .then(setDataFalse())
+            .then(setShowCaptionInputFalse())
+            .then(this.setState({ showSubmit: false }))
+            .catch(error => {
+                this.setState({ error })
+        })
     } 
     
 
