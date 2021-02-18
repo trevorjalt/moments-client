@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import AccountRoute from '../../routes/AccountRoute/AccountRoute'
+import ConnectionRoute from '../../routes/ConnectionRoute/ConnectionRoute'
 import FeedRoute from '../../routes/FeedRoute/FeedRoute'
 import LoginRoute from '../../routes/LoginRoute/LoginRoute'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
@@ -43,6 +44,10 @@ export default class App extends Component {
                 <PrivateRoute
                     path={'/account'}
                     component={AccountRoute}
+                />
+                <PrivateRoute
+                    path={'/connection'}
+                    component={ConnectionRoute}
                 />
                 <PrivateRoute
                     path={'/feed'}

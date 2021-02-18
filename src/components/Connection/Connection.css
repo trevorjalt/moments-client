@@ -1,0 +1,28 @@
+.connection-fullname {
+    color: #6A6E7C;
+}
+
+.connection-information {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.connection-information img {
+    margin-right: 2vw;
+}
+.connection-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 2vh;
+}
+
+.connection-nav-username {
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.connection-wrapper {
+    width: 100vw;
+}

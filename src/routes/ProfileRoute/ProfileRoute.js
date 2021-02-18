@@ -8,12 +8,6 @@ import ProfileUserInformation from '../../components/ProfileUserInformation/Prof
 export default class ProfileRoute extends Component {
     static contextType = MomentsContext
 
-    // see if we can get rearrange this a bit
-    // componentDidMount() {
-    //     const { setExpandUserGalleryFalse } = this.context
-    //     setExpandUserGalleryFalse()
-    // }
-
     render() {
         const { expandUserGallery } = this.context
 

@@ -27,6 +27,7 @@ export default class ProfilePicture extends Component {
     renderProfilePicture() {
         const { userProfilePicture } = this.context
 
+        console.log('user', userProfilePicture)
         if (!userProfilePicture.length) {
             return (
                 <div className='profile-picture'>

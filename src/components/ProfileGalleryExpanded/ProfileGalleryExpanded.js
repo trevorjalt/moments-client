@@ -81,7 +81,7 @@ export default class ProfileGalleryExpanded extends Component {
                     onKeyDown={this.handleKeyPressed}
                     tabIndex='0'
                     role='button'
-                    aria-label='new-post-clickable'
+                    aria-label='back-button-clickable'
                     aria-expanded='false'
                 >
                     <span className='backstripe-horizontal backstripe' />
@@ -124,7 +124,11 @@ export default class ProfileGalleryExpanded extends Component {
                                 </div>
                                 
                             }
-                        <div className='feed-container'>
+                        <div 
+                            className='feed-container' 
+                            tabIndex='0'
+                            aria-label={val.name}
+                        >
                             <img                               
                                 alt={val.name}
                                 src={`data:image/${val.img_type};base64,${buffTo64(val.img_file.data)}`}

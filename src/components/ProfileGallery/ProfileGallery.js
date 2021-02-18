@@ -44,7 +44,7 @@ export default class ProfileGallery extends Component {
                     <div 
                         key={val.id}
                         onClick={() => this.handleGalleryClick(val.id)}
-                        onKeyDown={this.handleKeyPressed}
+                        onKeyDown={this.handleKeyPressed(val.id)}
                         tabIndex='0'
                         role='button'
                         aria-label='user-post-clickable'

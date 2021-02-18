@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import UserAndNavContext from '../../contexts/UserAndNavContext'
+import UserCount from '../UserCount/UserCount'
 import ProfilePicture from '../ProfilePicture/ProfilePicture'
 import './ProfileUserInformation.css'
 
@@ -23,20 +24,7 @@ export default class ProfileUserInformation extends Component {
                 >
                     {error && <p>{error}</p>}
                 </div>
-                <div className='counts-wrapper'>
-                    <div className='counts-column'>
-                        <span>130</span>
-                        <span className='counts'>Followers</span>
-                    </div>
-                    <div className='counts-column'>
-                        <span>57</span>
-                        <span className='counts'>Posts</span>
-                    </div>
-                    <div className='counts-column'>
-                        <span>102</span>
-                        <span className='counts'>Following</span>
-                    </div>
-                </div>
+                <UserCount />
                 <ProfilePicture />
                 <div className='user-profile-information'>
                     <h2 className='user-handle'>{user.username}</h2>
@@ -48,5 +36,4 @@ export default class ProfileUserInformation extends Component {
             </div>
         )
     }
-
 }

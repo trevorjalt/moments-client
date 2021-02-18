@@ -88,6 +88,32 @@ const MomentsApiService = {
                     : res.json()
             )
     },
+
+    getUserFollowers() {
+        return fetch (`${config.API_ENDPOINT}/connection/followers`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },            
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
+            )
+    },
+
+    getUserFollowing() {
+        return fetch (`${config.API_ENDPOINT}/connection/following`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },            
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
+            )
+    },
 }
 
 export default MomentsApiService
