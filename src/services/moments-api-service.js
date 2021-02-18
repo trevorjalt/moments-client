@@ -114,6 +114,19 @@ const MomentsApiService = {
                     : res.json()
             )
     },
+
+    getUserFeed() {
+        return fetch (`${config.API_ENDPOINT}/feed`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },            
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
+            )
+    },
 }
 
 export default MomentsApiService

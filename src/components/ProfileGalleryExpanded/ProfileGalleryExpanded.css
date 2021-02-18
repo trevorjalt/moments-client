@@ -63,12 +63,6 @@
     font-size: 4vh;
 }
 
-.test {
-    position: fixed;
-    left: 3vw;
-
-}
-
 @media all and (min-width: 500px) {
     .username-logo {
         font-size: 4vh;

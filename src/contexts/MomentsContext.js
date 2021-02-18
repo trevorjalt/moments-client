@@ -7,6 +7,7 @@ const MomentsContext = React.createContext({
     followingActive: false,
     showCaptionInput: false,
     userCaptions: [],
+    userFeed: [],
     userFollowers: [],
     userFollowing: [],
     userPosts: [],
@@ -20,6 +21,7 @@ const MomentsContext = React.createContext({
     setShowCaptionInputFalse: () => { },
     setShowCaptionInputTrue: () => { },
     setUserCaptions: () => { },
+    setUserFeed: () => { },
     setUserFollowers: () => { },
     setUserFollowing: () => { },
     setUserPosts: () => { },
@@ -37,6 +39,7 @@ export class MomentsProvider extends Component {
         followingActive: false,
         showCaptionInput: false,
         userCaptions: [],
+        userFeed: [],
         userFollowers: [],
         userFollowing: [],
         userPosts: [],
@@ -83,6 +86,10 @@ export class MomentsProvider extends Component {
         this.setState({ userCaptions })
     }
 
+    setUserFeed = userFeed => {
+        this.setState({ userFeed })
+    }
+
     setUserFollowers = userFollowers => {
         this.setState({ userFollowers })
     }
@@ -107,6 +114,7 @@ export class MomentsProvider extends Component {
             followingActive: this.state.followingActive,
             showCaptionInput: this.state.showCaptionInput,
             userCaptions: this.state.userCaptions,
+            userFeed: this.state.userFeed,
             userFollowers: this.state.userFollowers,
             userFollowing: this.state.userFollowing,
             userPosts: this.state.userPosts,
@@ -120,6 +128,7 @@ export class MomentsProvider extends Component {
             setShowCaptionInputFalse: this.setShowCaptionInputFalse,
             setShowCaptionInputTrue: this.setShowCaptionInputTrue,
             setUserCaptions: this.setUserCaptions,
+            setUserFeed: this.setUserFeed,
             setUserFollowers: this.setUserFollowers,
             setUserFollowing: this.setUserFollowing,
             setUserPosts: this.setUserPosts,

@@ -9,8 +9,6 @@ import ProfilePictureDefault from '../ProfilePicture/images/profile-picture-defa
 import './Connection.css'
 
 
-
-
 export default class Connection extends Component {
     static contextType = MomentsContext
 

@@ -10,16 +10,12 @@ export default class ProfilePicture extends Component {
 
     state = {
         error: null,
-        // currentProfilePicture: {}
     }
 
-    // this componentDidMount keeps the user profile picture updated after an update
     componentDidMount() {
-        // this.context.clearError()
         const { setUserProfilePicture } = this.context
 
         MomentsApiService.getProfilePicture()
-            // .then(res => this.setState({ currentProfilePicture: res }))
             .then(res => setUserProfilePicture(res))
             .catch(err => this.setState({ error: err }))
     }

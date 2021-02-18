@@ -30,7 +30,7 @@ export default class ConnectionButton extends Component {
                 type='button'
                 className='connection-button-active'    
             >
-                Remove
+                Follower
             </button>
         )
     }
