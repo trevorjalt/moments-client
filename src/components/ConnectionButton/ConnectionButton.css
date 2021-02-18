@@ -1,0 +1,6 @@
+.connection-button-active {
+    color: #050505;
+    background: white;
+    border-radius: 3px;
+    border: solid 1px #DDE2E4;
+}

@@ -1,0 +1,32 @@
+.toggle-row {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    padding: 0;
+    margin: 0 0 2vh 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vh;
+    font-weight: bold;
+    color: #CBCDD2;
+    border-bottom: solid 1px #CBCDD2;
+
+}
+
+.toggle-text {
+    margin: 2vh 0 2vh 0;
+}
+
+.toggle-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.active {
+    color: #050505;
+    border-bottom: solid 1px #050505;
+}

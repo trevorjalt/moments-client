@@ -35,6 +35,13 @@ export default class NavMenu extends Component {
                             Feed
                         </Link>
                         <Link
+                            to='/connection'
+                            className='navigation-link-wrapper'
+                            onClick={this.context.setShowNav}
+                        >
+                            Connections
+                        </Link>
+                        <Link
                             to='/account'
                             className='navigation-link-wrapper'
                             onClick={this.context.setShowNav}

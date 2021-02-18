@@ -11,22 +11,12 @@ export default class ProfileUserInformation extends Component {
     }
 
     handleClickFollowers = () => {
-        const { 
-            setFollowingActiveFalse, 
-            setFollowersActiveTrue 
-        } = this.context
-
+        const { setFollowingActiveFalse } = this.context
         setFollowingActiveFalse()
-        setFollowersActiveTrue()
     }
 
     handleClickFollowing = () => {
-        const { 
-            setFollowersActiveFalse, 
-            setFollowingActiveTrue 
-        } = this.context
-        
-        setFollowersActiveFalse()
+        const { setFollowingActiveTrue } = this.context
         setFollowingActiveTrue()
     }
 

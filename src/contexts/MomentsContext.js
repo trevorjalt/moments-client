@@ -4,7 +4,6 @@ const MomentsContext = React.createContext({
     data: false,
     expandUserGallery: false,
     expandedId: null,
-    followersActive: false,
     followingActive: false,
     showCaptionInput: false,
     userCaptions: [],
@@ -16,8 +15,6 @@ const MomentsContext = React.createContext({
     setDataTrue: () => { },
     setExpandUserGalleryFalse: () => { },
     setExpandUserGalleryTrue: () => { },
-    setFollowersActiveFalse: () => { },
-    setFollowersActiveTrue: () => { },
     setFollowingActiveFalse: () => { },
     setFollowingActiveTrue: () => { },
     setShowCaptionInputFalse: () => { },
@@ -37,7 +34,6 @@ export class MomentsProvider extends Component {
         data: null,
         expandUserGallery: false,
         expandedId: null,
-        followersActive: false,
         followingActive: false,
         showCaptionInput: false,
         userCaptions: [],
@@ -65,14 +61,6 @@ export class MomentsProvider extends Component {
             expandUserGallery: true,
             expandedId: id,
         })
-    }
-
-    setFollowersActiveFalse = () => {
-        this.setState({ followersActive: false})
-    }
-    
-    setFollowersActiveTrue = () => {
-        this.setState({ followersActive: true })
     }
 
     setFollowingActiveFalse = () => {
@@ -116,7 +104,6 @@ export class MomentsProvider extends Component {
             data: this.state.data,
             expandUserGallery: this.state.expandUserGallery,
             expandedId: this.state.expandedId,
-            followersActive: this.state.followersActive,
             followingActive: this.state.followingActive,
             showCaptionInput: this.state.showCaptionInput,
             userCaptions: this.state.userCaptions,
@@ -128,8 +115,6 @@ export class MomentsProvider extends Component {
             setDataTrue: this.setDataTrue,
             setExpandUserGalleryFalse: this.setExpandUserGalleryFalse,
             setExpandUserGalleryTrue: this.setExpandUserGalleryTrue,
-            setFollowersActiveFalse: this.setFollowersActiveFalse,
-            setFollowersActiveTrue: this.setFollowersActiveTrue,
             setFollowingActiveFalse: this.setFollowingActiveFalse,
             setFollowingActiveTrue: this.setFollowingActiveTrue,
             setShowCaptionInputFalse: this.setShowCaptionInputFalse,
