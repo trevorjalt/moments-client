@@ -4,20 +4,17 @@ import { BrowserRouter } from 'react-router-dom'
 import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import PrivateRoute from './PrivateRoute'
-import ProfileRoute from '../../routes/ProfileRoute/ProfileRoute'
+import AccountRoute from '../../routes/AccountRoute/AccountRoute'
 
 
-describe(`PrivateRoute Component`, () => {
-    const props = {
-        component: <ProfileRoute /> 
-    }
+describe.only(`PrivateRoute Component`, () => {
     it('renders without crashing', () => {
         const div = document.createElement('div')
             ReactDOM.render(
                 <BrowserRouter>
                     <UserAndNavProvider>
                         <MomentsProvider>
-                            <PrivateRoute {...props} />
+                            <AccountRoute />
                         </MomentsProvider>
                     </UserAndNavProvider>
                 </BrowserRouter>, div)
