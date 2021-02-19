@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import MomentsContext from '../../contexts/MomentsContext'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import AccountRoute from '../../routes/AccountRoute/AccountRoute'
@@ -18,6 +19,8 @@ import NavMenu from '../NavMenu/NavMenu'
 import './App.css'
 
 export default class App extends Component {
+    static contextType = MomentsContext
+
     state = { hasError: false }
 
     static getDerivedStateFromError(error) {
@@ -58,7 +61,7 @@ export default class App extends Component {
                     component={PostUploadRoute}
                 />
                 <PrivateRoute
-                    path={'/profile'}
+                    path={'/:username'}
                     component={ProfileRoute}
                 />
                 <PrivateRoute
@@ -74,10 +77,14 @@ export default class App extends Component {
 
     render() {
         const { hasError } = this.state
+        const { setRequestedUserFalse } = this.context
+
         return (
             <div className='App'>
                 <Header />
-                <NavMenu />
+                <NavMenu 
+                    setRequestedUserFalse={setRequestedUserFalse}
+                />
                 <main
                     className='App-Main'
                 >  

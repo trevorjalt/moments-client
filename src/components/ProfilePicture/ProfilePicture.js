@@ -13,18 +13,38 @@ export default class ProfilePicture extends Component {
     }
 
     componentDidMount() {
-        const { setUserProfilePicture } = this.context
-
+        const { 
+            requestedUser, 
+            requestedUserInfo, 
+            setRequestedUserProfilePicture,
+            setUserProfilePicture ,
+        
+        } = this.context
+        
+        if (requestedUser === true) {
+            MomentsApiService.getRequestedUserProfilePicture(requestedUserInfo.id)
+                .then(res => setRequestedUserProfilePicture(res))
+                .catch(err => this.setState({ error: err }))
+        }
+        
         MomentsApiService.getProfilePicture()
             .then(res => setUserProfilePicture(res))
             .catch(err => this.setState({ error: err }))
+
     }
 
     renderProfilePicture() {
-        const { userProfilePicture } = this.context
+        const { requestedUser, requestedUserProfilePicture, userProfilePicture } = this.context
 
-        console.log('user', userProfilePicture)
-        if (!userProfilePicture.length) {
+        let picture = {}
+
+        if (requestedUser === true) {
+            picture = requestedUserProfilePicture
+        } else {
+            picture = userProfilePicture
+        }
+
+        if (!picture.length) {
             return (
                 <div className='profile-picture'>
                     <img 
@@ -39,7 +59,7 @@ export default class ProfilePicture extends Component {
                 <div className='profile-picture'>
                 <img
                     alt='current-user-profile'
-                    src={`data:image/${userProfilePicture[0].img_type};base64,${buffTo64(userProfilePicture[0].img_file.data)}`}
+                    src={`data:image/${picture[0].img_type};base64,${buffTo64(picture[0].img_file.data)}`}
                     className='profile-picture-scale'
                 />
                 </div>

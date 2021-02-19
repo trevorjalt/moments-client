@@ -12,7 +12,17 @@ export default class NavMenu extends Component {
         this.context.setShowNav()
     }
 
+    handleNavLinkClick = () => {
+        const { setRequestedUserFalse } = this.props
+        const { setShowNav } = this.context
+
+        setRequestedUserFalse()
+        setShowNav()
+    }
+
     renderLogoutLink() {
+        const { user } = this.context
+
         return (
             <div>
                 <nav 
@@ -21,30 +31,30 @@ export default class NavMenu extends Component {
                 >
                     <div className='navigation-menu-wrapper'>
                         <Link
-                            to='/profile'
+                            to={`/${user.username}`}
                             className='navigation-link-wrapper'
-                            onClick={this.context.setShowNav}
+                            onClick={this.handleNavLinkClick}
                         >
                             Profile
                         </Link>
                         <Link
                             to='/feed'
                             className='navigation-link-wrapper'
-                            onClick={this.context.setShowNav}
+                            onClick={this.handleNavLinkClick}
                         >
                             Feed
                         </Link>
                         <Link
                             to='/connection'
                             className='navigation-link-wrapper'
-                            onClick={this.context.setShowNav}
+                            onClick={this.handleNavLinkClick}
                         >
                             Connections
                         </Link>
                         <Link
                             to='/account'
                             className='navigation-link-wrapper'
-                            onClick={this.context.setShowNav}
+                            onClick={this.handleNavLinkClick}
                         >
                             Account
                         </Link>

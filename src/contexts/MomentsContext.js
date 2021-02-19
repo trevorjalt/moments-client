@@ -5,6 +5,9 @@ const MomentsContext = React.createContext({
     expandUserGallery: false,
     expandedId: null,
     followingActive: false,
+    requestedUser: false,
+    requestedUserInfo: null,
+    requestedUserProfilePicture: {},
     showCaptionInput: false,
     userCaptions: [],
     userFeed: [],
@@ -18,6 +21,10 @@ const MomentsContext = React.createContext({
     setExpandUserGalleryTrue: () => { },
     setFollowingActiveFalse: () => { },
     setFollowingActiveTrue: () => { },
+    setRequestedUserFalse: () => { },
+    setRequestedUserTrue: () => { },
+    setRequestedUserInfo: () => { },
+    setRequestedUserProfilePicture: () => { },
     setShowCaptionInputFalse: () => { },
     setShowCaptionInputTrue: () => { },
     setUserCaptions: () => { },
@@ -37,6 +44,9 @@ export class MomentsProvider extends Component {
         expandUserGallery: false,
         expandedId: null,
         followingActive: false,
+        requestedUser: false,
+        requestedUserInfo: null,
+        requestedUserProfilePicture: {},
         showCaptionInput: false,
         userCaptions: [],
         userFeed: [],
@@ -72,6 +82,22 @@ export class MomentsProvider extends Component {
     
     setFollowingActiveTrue = () => {
         this.setState({ followingActive: true })
+    }
+
+    setRequestedUserFalse = () => {
+        this.setState({ requestedUser: false })
+    }
+
+    setRequestedUserTrue = () => {
+        this.setState({ requestedUser: true })
+    }
+
+    setRequestedUserInfo = requestedUserInfo => {
+        this.setState({ requestedUserInfo })
+    }
+
+    setRequestedUserProfilePicture = requestedUserProfilePicture => {
+        this.setState({ requestedUserProfilePicture })
     }
 
     setShowCaptionInputFalse = () => {
@@ -112,6 +138,9 @@ export class MomentsProvider extends Component {
             expandUserGallery: this.state.expandUserGallery,
             expandedId: this.state.expandedId,
             followingActive: this.state.followingActive,
+            requestedUser: this.state.requestedUser,
+            requestedUserInfo: this.state.requestedUserInfo,
+            requestedUserProfilePicture: this.state.requestedUserProfilePicture,
             showCaptionInput: this.state.showCaptionInput,
             userCaptions: this.state.userCaptions,
             userFeed: this.state.userFeed,
@@ -125,6 +154,10 @@ export class MomentsProvider extends Component {
             setExpandUserGalleryTrue: this.setExpandUserGalleryTrue,
             setFollowingActiveFalse: this.setFollowingActiveFalse,
             setFollowingActiveTrue: this.setFollowingActiveTrue,
+            setRequestedUserFalse: this.setRequestedUserFalse,
+            setRequestedUserTrue: this.setRequestedUserTrue,
+            setRequestedUserInfo: this.setRequestedUserInfo,
+            setRequestedUserProfilePicture: this.setRequestedUserProfilePicture,
             setShowCaptionInputFalse: this.setShowCaptionInputFalse,
             setShowCaptionInputTrue: this.setShowCaptionInputTrue,
             setUserCaptions: this.setUserCaptions,

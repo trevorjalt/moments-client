@@ -127,6 +127,45 @@ const MomentsApiService = {
                     : res.json()
             )
     },
+
+    getRequestedUserCaptions(id) {
+        return fetch (`${config.API_ENDPOINT}/post-caption/${id}`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
+            )
+    },
+
+    getRequestedUserPostPhotos(id) {
+        return fetch (`${config.API_ENDPOINT}/post-photo/download/${id}`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
+            )
+    },
+
+    getRequestedUserProfilePicture(id) {
+        return fetch (`${config.API_ENDPOINT}/profile-picture/download/${id}`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
+            )
+    },
 }
 
 export default MomentsApiService

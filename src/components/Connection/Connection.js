@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import MomentsContext from '../../contexts/MomentsContext'
 import MomentsApiService from '../../services/moments-api-service';
 import { buffTo64 } from '../Utils/Utils'
@@ -28,12 +29,16 @@ export default class Connection extends Component {
             .catch(err => this.setState({ error: err}))
     }
 
+    handleClick = val => {
+        const { setRequestedUserTrue, setRequestedUserInfo } = this.context
+        setRequestedUserTrue()
+        setRequestedUserInfo(val)
+    }
+
     renderConnectionData(props) {
         const { userFollowers } = this.context
         
         let follower = userFollowers.find(el => el.id === props)
-        // console.log('test', userFollowers[0].id)
-        console.log(follower)
 
         if (follower) {
             return (
@@ -59,25 +64,37 @@ export default class Connection extends Component {
         if (followingActive === true ) {
             return (
                 userFollowing.map((val) => (                   
-                    <div key={val.id} className='connection-wrapper'>
+                    <Link
+                        to={`/${val.username}`}
+                        key={val.id} 
+                        className='connection-wrapper'
+                        onClick={() => this.handleClick(val)}
+                        
+                    >
                         <div className='connection-information'>
-                        {this.renderConnectionPicture(val.id)}
-                        {this.renderConnectionData(val.id)}
+                            {this.renderConnectionPicture(val.id)}
+                            {this.renderConnectionData(val.id)}
                         </div>
                         <ConnectionButton />         
-                    </div>
+                    </Link>
                 ))
             )
         }
         return (
             userFollowers.map((val) => (                   
-                <div key={val.id} className='connection-wrapper'>
+                <Link
+                    to={`/${val.username}`}
+                    key={val.id} 
+                    className='connection-wrapper'
+                    onClick={() => this.handleClick(val)}
+                        
+                >
                     <div className='connection-information'>
-                    {this.renderConnectionPicture(val.id)}
-                    {this.renderConnectionData(val.id)}
+                        {this.renderConnectionPicture(val.id)}
+                        {this.renderConnectionData(val.id)}
                     </div>
                     <ConnectionButton />         
-                </div>
+                </Link>
             ))
         )
     }

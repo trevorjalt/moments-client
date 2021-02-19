@@ -9,12 +9,18 @@ export default class ProfileRoute extends Component {
     static contextType = MomentsContext
 
     render() {
-        const { expandUserGallery } = this.context
+        const { 
+            expandUserGallery, 
+            requestedUser, 
+            requestedUserInfo } = this.context
 
         if (expandUserGallery === false) {
             return (
                 <section className='profile-route'>
-                    <ProfileUserInformation />
+                    <ProfileUserInformation 
+                        requestedUser={requestedUser}
+                        requestedUserInfo={requestedUserInfo}
+                    />
                     <ProfileGallery />
                 </section>
             )

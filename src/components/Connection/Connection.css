@@ -24,6 +24,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-decoration: none;
+    color: #050505;
 }
 
 .connection-wrapper button {
