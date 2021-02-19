@@ -52,15 +52,31 @@ export default class ProfileGalleryExpanded extends Component {
     }
 
     renderCaption(props) {
-        const { userCaptions = [] } = this.context
+        const { 
+            requestedUser, 
+            requestedUserCaptions, 
+            requestedUserInfo, 
+            userCaptions } = this.context
         const { user } = this.props
-        let caption = userCaptions.find(el => el.post_photo_id === props)
+        
+        let userInfoDisplay = []
+        let captionDisplay = []
+
+        if (requestedUser === true) {
+            userInfoDisplay = requestedUserInfo
+            captionDisplay = requestedUserCaptions
+        } else {
+            userInfoDisplay = user.user
+            captionDisplay = userCaptions
+        }
+
+        let caption = captionDisplay.find(el => el.post_photo_id === props)
 
         if (caption) {
             return (
                 <div>
                     <span className='caption-username'>
-                        {user.user.username}
+                        {userInfoDisplay.username}
                     </span>
                     <span>
                         {caption.caption}
@@ -71,7 +87,16 @@ export default class ProfileGalleryExpanded extends Component {
     }
 
     renderExpandedNav() {
+        const { requestedUser, requestedUserInfo } = this.context
         const { user } = this.props
+
+        let userName = []
+        
+        if (requestedUser === true) {
+            userName = requestedUserInfo
+        } else {
+            userName = user.user
+        }
 
         return (
             <div className='expanded-navigation'>
@@ -88,7 +113,7 @@ export default class ProfileGalleryExpanded extends Component {
                     <span className='backstripe-vertical backstripe' />  
                 </div>
                 <div className='expanded-header'>
-                    <span>{user.user.fullname.toUpperCase()}</span>
+                    <span>{userName.fullname.toUpperCase()}</span>
                     <span className='posts-text'>Posts</span>
                 </div>
             </div>
@@ -97,22 +122,43 @@ export default class ProfileGalleryExpanded extends Component {
 
 
     renderGalleryExpanded() {
-        const { userPosts, userProfilePicture, expandUserGallery } = this.context
+        const { 
+            requestedUser,
+            requestedUserInfo,
+            requestedUserProfilePicture,
+            requestedUserPosts,
+            userPosts, 
+            userProfilePicture, 
+            expandUserGallery } = this.context
         const { user } = this.props
+
+        let postDisplay = []
+        let userDisplay = []
+        let profileDisplay = []
+
+        if (requestedUser === true) {
+            postDisplay = requestedUserPosts
+            userDisplay = requestedUserInfo
+            profileDisplay = requestedUserProfilePicture
+        } else {
+            postDisplay = userPosts
+            userDisplay = user.user
+            profileDisplay = userProfilePicture
+        }
  
         if (expandUserGallery === true) {
             return (
-                userPosts.map((val, index) => (
+                postDisplay.map((val, index) => (
                     
                     <div key={val.id} className='feed-wrapper' ref={ref => this.divToFocus[index] = {ref, id: val.id}}>
-                            {userProfilePicture.length !== 0
+                            {profileDisplay.length !== 0
                                 ? <div className='feed-header'>
                                     <img
                                         alt='current-user-profile-picture'
-                                        src={`data:image/${userProfilePicture[0].img_type};base64,${buffTo64(userProfilePicture[0].img_file.data)}`}
+                                        src={`data:image/${profileDisplay[0].img_type};base64,${buffTo64(profileDisplay[0].img_file.data)}`}
                                         className='feed-profile-picture circular-landscape'
                                     />
-                                    <span className='feed-username'>{user.user.username}</span>
+                                    <span className='feed-username'>{userDisplay.username}</span>
                                 </div>
                                 : <div className='feed-header'>
                                     <img 
@@ -120,7 +166,7 @@ export default class ProfileGalleryExpanded extends Component {
                                         src={ProfilePictureDefault} 
                                         alt='default-user-profile'
                                     />
-                                    <span className='feed-username'>{user.user.username}</span>
+                                    <span className='feed-username'>{userDisplay.username}</span>
                                 </div>
                                 
                             }

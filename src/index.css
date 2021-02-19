@@ -98,6 +98,8 @@ code {
     display: flex;
     align-items: center;
 	background: white;
+	text-decoration: none;
+	color: #050505;
 }
 
 .feed-username {

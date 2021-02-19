@@ -36,7 +36,7 @@ export default class ProfilePicture extends Component {
     renderProfilePicture() {
         const { requestedUser, requestedUserProfilePicture, userProfilePicture } = this.context
 
-        let picture = {}
+        let picture = []
 
         if (requestedUser === true) {
             picture = requestedUserProfilePicture

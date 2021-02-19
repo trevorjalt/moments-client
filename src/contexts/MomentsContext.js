@@ -6,15 +6,18 @@ const MomentsContext = React.createContext({
     expandedId: null,
     followingActive: false,
     requestedUser: false,
+    requestedUserCaptions: [],
     requestedUserInfo: null,
-    requestedUserProfilePicture: {},
+    requestedUserPosts: [],
+    requestedUserProfilePicture: [],
     showCaptionInput: false,
     userCaptions: [],
+    userCounts: [],
     userFeed: [],
     userFollowers: [],
     userFollowing: [],
     userPosts: [],
-    userProfilePicture: {},
+    userProfilePicture: [],
     setDataFalse: () => { },
     setDataTrue: () => { },
     setExpandUserGalleryFalse: () => { },
@@ -23,11 +26,14 @@ const MomentsContext = React.createContext({
     setFollowingActiveTrue: () => { },
     setRequestedUserFalse: () => { },
     setRequestedUserTrue: () => { },
+    setRequestedUserCaptions: () => { },
     setRequestedUserInfo: () => { },
+    setRequestedUserPosts: () => { },
     setRequestedUserProfilePicture: () => { },
     setShowCaptionInputFalse: () => { },
     setShowCaptionInputTrue: () => { },
     setUserCaptions: () => { },
+    setUserCounts: () => { },
     setUserFeed: () => { },
     setUserFollowers: () => { },
     setUserFollowing: () => { },
@@ -45,16 +51,18 @@ export class MomentsProvider extends Component {
         expandedId: null,
         followingActive: false,
         requestedUser: false,
+        requestedUserCaptions: [],
         requestedUserInfo: null,
-        requestedUserProfilePicture: {},
+        requestedUserPosts: [],
+        requestedUserProfilePicture: [],
         showCaptionInput: false,
         userCaptions: [],
+        userCounts: [],
         userFeed: [],
         userFollowers: [],
         userFollowing: [],
         userPosts: [],
-        userProfilePicture: {},
-        
+        userProfilePicture: [],       
     }
 
     setDataFalse = () => {
@@ -92,8 +100,16 @@ export class MomentsProvider extends Component {
         this.setState({ requestedUser: true })
     }
 
+    setRequestedUserCaptions = requestedUserCaptions => {
+        this.setState({ requestedUserCaptions})
+    }
+
     setRequestedUserInfo = requestedUserInfo => {
         this.setState({ requestedUserInfo })
+    }
+
+    setRequestedUserPosts = requestedUserPosts => {
+        this.setState({ requestedUserPosts })
     }
 
     setRequestedUserProfilePicture = requestedUserProfilePicture => {
@@ -110,6 +126,10 @@ export class MomentsProvider extends Component {
 
     setUserCaptions = userCaptions => {
         this.setState({ userCaptions })
+    }
+
+    setUserCounts = userCounts => {
+        this.setState({ userCounts })
     }
 
     setUserFeed = userFeed => {
@@ -139,10 +159,13 @@ export class MomentsProvider extends Component {
             expandedId: this.state.expandedId,
             followingActive: this.state.followingActive,
             requestedUser: this.state.requestedUser,
+            requestedUserCaptions: this.state.requestedUserCaptions,
             requestedUserInfo: this.state.requestedUserInfo,
+            requestedUserPosts: this.state.requestedUserPosts,
             requestedUserProfilePicture: this.state.requestedUserProfilePicture,
             showCaptionInput: this.state.showCaptionInput,
             userCaptions: this.state.userCaptions,
+            userCounts: this.state.userCounts,
             userFeed: this.state.userFeed,
             userFollowers: this.state.userFollowers,
             userFollowing: this.state.userFollowing,
@@ -156,11 +179,14 @@ export class MomentsProvider extends Component {
             setFollowingActiveTrue: this.setFollowingActiveTrue,
             setRequestedUserFalse: this.setRequestedUserFalse,
             setRequestedUserTrue: this.setRequestedUserTrue,
+            setRequestedUserCaptions: this.setRequestedUserCaptions,
             setRequestedUserInfo: this.setRequestedUserInfo,
+            setRequestedUserPosts: this.setRequestedUserPosts,
             setRequestedUserProfilePicture: this.setRequestedUserProfilePicture,
             setShowCaptionInputFalse: this.setShowCaptionInputFalse,
             setShowCaptionInputTrue: this.setShowCaptionInputTrue,
             setUserCaptions: this.setUserCaptions,
+            setUserCounts: this.setUserCounts,
             setUserFeed: this.setUserFeed,
             setUserFollowers: this.setUserFollowers,
             setUserFollowing: this.setUserFollowing,

@@ -68,8 +68,7 @@ export default class Connection extends Component {
                         to={`/${val.username}`}
                         key={val.id} 
                         className='connection-wrapper'
-                        onClick={() => this.handleClick(val)}
-                        
+                        onClick={() => this.handleClick(val)}   
                     >
                         <div className='connection-information'>
                             {this.renderConnectionPicture(val.id)}
@@ -86,8 +85,7 @@ export default class Connection extends Component {
                     to={`/${val.username}`}
                     key={val.id} 
                     className='connection-wrapper'
-                    onClick={() => this.handleClick(val)}
-                        
+                    onClick={() => this.handleClick(val)}     
                 >
                     <div className='connection-information'>
                         {this.renderConnectionPicture(val.id)}
@@ -103,7 +101,6 @@ export default class Connection extends Component {
         const { userFollowers } = this.context
 
         let follower = userFollowers.find(el => el.id === props)
-        console.log('followerPhoto', follower)
 
         if (follower && follower.img_type !== null) {
             return (
@@ -131,9 +128,7 @@ export default class Connection extends Component {
     render() {
         const { error } = this.state
         const { user, history } = this.props
-        console.log('followers', this.context.userFollowers)
-        console.log('following', this.context.userFollowing)
-        console.log('loaded', this.state.followersLoaded)
+
         return (
             <div>
                 <div 

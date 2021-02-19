@@ -26,7 +26,7 @@ export default class Feed extends Component {
         const { userFeed = [] } = this.context
 
         let caption = userFeed.find(el => el.post_photo_id === props)
-        console.log()
+ 
         if (caption) {
             return (
                 <div>
@@ -121,7 +121,7 @@ export default class Feed extends Component {
 
     render() {
         const { error } = this.state
-        console.log('feed info', this.context.userFeed)
+
         return (
             <div>
                 <div 

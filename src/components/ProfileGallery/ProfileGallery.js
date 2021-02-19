@@ -15,7 +15,24 @@ export default class ProfileGallery extends Component {
     }
 
     componentDidMount() {
-        const { setUserPosts, setUserCaptions } = this.context
+        const { 
+            requestedUser, 
+            requestedUserInfo, 
+            setRequestedUserCaptions,
+            setRequestedUserPosts,
+            setUserPosts, 
+            setUserCaptions } = this.context
+
+        if (requestedUser === true) {
+            MomentsApiService.getRequestedUserPostPhotos(requestedUserInfo.id)
+            .then(res => setRequestedUserPosts(res))
+            .catch(err => this.setState({ error: err}))
+
+            MomentsApiService.getRequestedUserCaptions(requestedUserInfo.id)
+                .then(res => setRequestedUserCaptions(res))
+                .catch(err => this.setState({ error: err }))
+        }
+
         MomentsApiService.getUserPostPhoto()
             .then(res => setUserPosts(res))
             .catch(err => this.setState({ error: err}))
@@ -25,9 +42,9 @@ export default class ProfileGallery extends Component {
             .catch(err => this.setState({ error: err }))
     }
 
-    handleKeyPressed = (ev) => {
+    handleKeyPressed = (ev, id) => {
         if (ev.key === 'Enter') {
-            this.handleGalleryClick()
+            this.handleGalleryClick(id)
         }
     }
 
@@ -36,15 +53,23 @@ export default class ProfileGallery extends Component {
     }
 
     renderGallery() {
-        const { userPosts } = this.context
+        const { userPosts, requestedUser, requestedUserPosts } = this.context
 
-        if (userPosts.length !== 0) {
+        let displayPosts = []
+
+        if (requestedUser === true) {
+            displayPosts = requestedUserPosts
+        } else {
+            displayPosts = userPosts
+        }
+
+        if (displayPosts.length !== 0) {
             return (
-                userPosts.map((val) => (
+                displayPosts.map((val) => (
                     <div 
                         key={val.id}
                         onClick={() => this.handleGalleryClick(val.id)}
-                        onKeyDown={this.handleKeyPressed(val.id)}
+                        onKeyDown={(ev) => this.handleKeyPressed(ev, val.id)}
                         tabIndex='0'
                         role='button'
                         aria-label='user-post-clickable'

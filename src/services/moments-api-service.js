@@ -166,6 +166,20 @@ const MomentsApiService = {
                     : res.json()
             )
     },
+
+    getUserCounts() {
+        return fetch(`${config.API_ENDPOINT}/count`, {
+            method: "GET",
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
+            )
+    },
 }
 
 export default MomentsApiService

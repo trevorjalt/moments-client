@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import MomentsContext from '../../contexts/MomentsContext'
+import MomentsApiService from '../../services/moments-api-service'
 import './UserCount.css'
 
 export default class ProfileUserInformation extends Component {
@@ -8,6 +9,14 @@ export default class ProfileUserInformation extends Component {
 
     state = {
         error: null,
+    }
+
+    componentDidMount() {
+        const { setUserCounts } = this.context
+
+        MomentsApiService.getUserCounts()
+            .then(res => setUserCounts(res))
+            .catch(err => this.setState({ error: err}))
     }
 
     handleClickFollowers = () => {
@@ -22,39 +31,48 @@ export default class ProfileUserInformation extends Component {
 
     render() {
         const { error } = this.state
+        const { requestedUser, userCounts } = this.context
 
-        return (
-            <div>
-                <div 
-                    role='alert' 
-                    className='error-message'
-                    aria-live='assertive'
-                >
-                    {error && <p>{error}</p>}
-                </div>
-                <div className='counts-wrapper'>
-                    <Link 
-                        to='/connection'
-                        className='counts-column'
-                        onClick={this.handleClickFollowers}
+        const userFollowers = parseInt(userCounts.userFollowerCount[0].count)
+        const userFollowing = parseInt(userCounts.userFollowingCount[0].count)
+        const userPosts = parseInt(userCounts.userPostCount[0].count)
+
+        if (requestedUser === false) {
+            return (
+                <div>
+                    <div 
+                        role='alert' 
+                        className='error-message'
+                        aria-live='assertive'
                     >
-                        <span>130</span>
-                        <span className='counts'>Followers</span>
-                    </Link>
-                    <div className='counts-column'>
-                        <span>57</span>
-                        <span className='counts'>Posts</span>
+                        {error && <p>{error}</p>}
                     </div>
-                    <Link 
-                        to='/connection'
-                        className='counts-column'
-                        onClick={this.handleClickFollowing}
-                    >
-                        <span>102</span>
-                        <span className='counts'>Following</span>
-                    </Link>
+                    <div className='counts-wrapper'>
+                        <Link 
+                            to='/connection'
+                            className='counts-column'
+                            onClick={this.handleClickFollowers}
+                        >
+                            <span>{userFollowers}</span>
+                            <span className='counts'>Followers</span>
+                        </Link>
+                        <div className='counts-column'>
+                            <span>{userPosts}</span>
+                            <span className='counts'>Posts</span>
+                        </div>
+                        <Link 
+                            to='/connection'
+                            className='counts-column'
+                            onClick={this.handleClickFollowing}
+                        >
+                            <span>{userFollowing}</span>
+                            <span className='counts'>Following</span>
+                        </Link>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return ''
+        }
     }
 }
