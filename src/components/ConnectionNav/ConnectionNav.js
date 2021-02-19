@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './ConnectionNav.css'
 
-
-
-
 export default class ConnectionNav extends Component {
 
     state = {

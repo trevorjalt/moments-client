@@ -1,26 +1,25 @@
 import React, { Component } from 'react'
-// import UserAndNavContext from '../../contexts/UserAndNavContext'
+import UserAndNavContext from '../../contexts/UserAndNavContext'
 import './NavNewPost.css'
 
 export default class NavNewPost extends Component {
-    // static contextType = UserAndNavContext
+    static contextType = UserAndNavContext
 
     handleKeyPressed = (ev) => {
         if (ev.key === 'Enter') {
-            // this.handleNavClick()
-            // this.context.setShowNav()
+            this.handleNewPostClick()
         }
     }
 
-    // handleNavClick = () => {
-    //     this.context.setShowNav()
-    // }
+    handleNewPostClick = () => {
+        this.context.setShowNavFalse()
+    }
 
     renderNewPostIcon() {
         return (
             <div
                 className='new-post-icon'
-                // onClick={this.handleNavClick}
+                onClick={this.handleNewPostClick}
                 onKeyDown={this.handleKeyPressed}
                 tabIndex='0'
                 role='button'

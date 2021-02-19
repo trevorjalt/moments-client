@@ -9,6 +9,10 @@ export default class PostCaption extends Component {
         error: null
     }
 
+    handleCaptionInput = ev => {
+        const { setCaptionInput } = this.context
+        setCaptionInput(ev.target.value)
+    }
 
     renderCaptionInput() {
         if (this.context.showCaptionInput === true) {
@@ -32,6 +36,7 @@ export default class PostCaption extends Component {
                         aria-required='true'
                         autoComplete='off'
                         maxLength='500'
+                        onInput={this.handleCaptionInput.bind(this)}
                     >
                     </textarea>
                 </div>

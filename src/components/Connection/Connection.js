@@ -36,9 +36,21 @@ export default class Connection extends Component {
     }
 
     renderConnectionData(props) {
-        const { userFollowers } = this.context
+        const {  
+            followingActive, 
+            userFollowers, 
+            userFollowing, 
+        } = this.context
+
+        let connectionData = []
+
+        if (followingActive === true) {
+            connectionData = userFollowing
+        } else {
+            connectionData = userFollowers
+        }
         
-        let follower = userFollowers.find(el => el.id === props)
+        let follower = connectionData.find(el => el.id === props)
 
         if (follower) {
             return (
@@ -65,7 +77,7 @@ export default class Connection extends Component {
             return (
                 userFollowing.map((val) => (                   
                     <Link
-                        to={`/${val.username}`}
+                        to={'/profile'}
                         key={val.id} 
                         className='connection-wrapper'
                         onClick={() => this.handleClick(val)}   
@@ -82,7 +94,7 @@ export default class Connection extends Component {
         return (
             userFollowers.map((val) => (                   
                 <Link
-                    to={`/${val.username}`}
+                    to={'/profile'}
                     key={val.id} 
                     className='connection-wrapper'
                     onClick={() => this.handleClick(val)}     
@@ -98,9 +110,21 @@ export default class Connection extends Component {
     }
 
     renderConnectionPicture(props) {
-        const { userFollowers } = this.context
+        const {  
+            followingActive, 
+            userFollowers, 
+            userFollowing, 
+        } = this.context
 
-        let follower = userFollowers.find(el => el.id === props)
+        let connectionPictures = []
+
+        if (followingActive === true) {
+            connectionPictures = userFollowing
+        } else {
+            connectionPictures = userFollowers
+        }
+
+        let follower = connectionPictures.find(el => el.id === props)
 
         if (follower && follower.img_type !== null) {
             return (

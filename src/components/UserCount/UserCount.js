@@ -32,10 +32,17 @@ export default class ProfileUserInformation extends Component {
     render() {
         const { error } = this.state
         const { requestedUser, userCounts } = this.context
+        console.log('counts', userCounts)
 
-        const userFollowers = parseInt(userCounts.userFollowerCount[0].count)
-        const userFollowing = parseInt(userCounts.userFollowingCount[0].count)
-        const userPosts = parseInt(userCounts.userPostCount[0].count)
+        let userFollowers = []
+        let userFollowing = []
+        let userPosts = []
+
+        if (userCounts.length !== 0) {
+            userFollowers = parseInt(userCounts.userFollowerCount[0].count)
+            userFollowing = parseInt(userCounts.userFollowingCount[0].count)
+            userPosts = parseInt(userCounts.userPostCount[0].count)
+        }
 
         if (requestedUser === false) {
             return (

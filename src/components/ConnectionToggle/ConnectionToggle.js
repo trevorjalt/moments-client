@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MomentsContext from '../../contexts/MomentsContext'
+import MomentsApiService from '../../services/moments-api-service'
 import './ConnectionToggle.css'
 
 export default class ConnectionToggle extends Component {
@@ -7,6 +8,14 @@ export default class ConnectionToggle extends Component {
 
     state = {
         error: null,
+    }
+
+    componentDidMount() {
+        const { setUserCounts } = this.context
+
+        MomentsApiService.getUserCounts()
+            .then(res => setUserCounts(res))
+            .catch(err => this.setState({ error: err}))
     }
 
     handleClickFollowers = () => {
@@ -32,7 +41,15 @@ export default class ConnectionToggle extends Component {
     }
 
     renderConnectionToggle() {
-        const { followingActive } = this.context
+        const { followingActive, userCounts } = this.context
+
+        let userFollowers = []
+        let userFollowing = []
+
+        if (userCounts.length !== 0) {
+            userFollowers = parseInt(userCounts.userFollowerCount[0].count)
+            userFollowing = parseInt(userCounts.userFollowingCount[0].count)
+        }
 
         if (followingActive) {
             return (
@@ -47,7 +64,7 @@ export default class ConnectionToggle extends Component {
                         aria-label='followers-button-clickable'
                         aria-expanded='false'
                     >
-                        <span className='toggle-text'>130 Followers</span>
+                        <span className='toggle-text'>{userFollowers} Followers</span>
                     </div>
                     <div 
                         className='toggle-row active'
@@ -57,7 +74,7 @@ export default class ConnectionToggle extends Component {
                         aria-label='following-button-clickable'
                         aria-expanded='false'
                     >
-                        <span className='toggle-text'>102 Following</span>
+                        <span className='toggle-text'>{userFollowing} Following</span>
                     </div>
                 </div>
             )
@@ -73,7 +90,7 @@ export default class ConnectionToggle extends Component {
                     aria-label='followers-button-clickable'
                     aria-expanded='false'
                 >
-                    <span className='toggle-text'>130 Followers</span>
+                    <span className='toggle-text'>{userFollowers} Followers</span>
                 </div>
                 <div 
                     className='toggle-row'
@@ -84,7 +101,7 @@ export default class ConnectionToggle extends Component {
                     aria-label='followers-button-clickable'
                     aria-expanded='false'
                 >
-                    <span className='toggle-text'>102 Following</span>
+                    <span className='toggle-text'>{userFollowing} Following</span>
                 </div>
             </div>
         )

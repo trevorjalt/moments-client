@@ -43,7 +43,7 @@ export default class PostForm extends Component {
 
     render() {
         const { error, showSubmit } = this.state
-        const { data, showCaptionInput } = this.context
+        const { captionInput, data, showCaptionInput } = this.context
 
         return (
             <form
@@ -87,7 +87,7 @@ export default class PostForm extends Component {
                         ? <button 
                             type='submit'
                             className='submit-button'
-                            disabled={!data}
+                            disabled={!captionInput}
                         >
                             Submit
                         </button>

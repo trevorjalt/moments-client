@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 const MomentsContext = React.createContext({
+    captionInput: false,
     data: false,
     expandUserGallery: false,
     expandedId: null,
@@ -18,6 +19,7 @@ const MomentsContext = React.createContext({
     userFollowing: [],
     userPosts: [],
     userProfilePicture: [],
+    setCaptionInput: () => { },
     setDataFalse: () => { },
     setDataTrue: () => { },
     setExpandUserGalleryFalse: () => { },
@@ -46,6 +48,7 @@ export default MomentsContext
 
 export class MomentsProvider extends Component {
     state = {
+        captionInput: null,
         data: null,
         expandUserGallery: false,
         expandedId: null,
@@ -63,6 +66,10 @@ export class MomentsProvider extends Component {
         userFollowing: [],
         userPosts: [],
         userProfilePicture: [],       
+    }
+
+    setCaptionInput = captionInput => {
+        this.setState({ captionInput })
     }
 
     setDataFalse = () => {
@@ -154,6 +161,7 @@ export class MomentsProvider extends Component {
 
     render() {
         const value = {
+            captionInput: this.state.captionInput,
             data: this.state.data,
             expandUserGallery: this.state.expandUserGallery,
             expandedId: this.state.expandedId,
@@ -171,6 +179,7 @@ export class MomentsProvider extends Component {
             userFollowing: this.state.userFollowing,
             userPosts: this.state.userPosts,
             userProfilePicture: this.state.userProfilePicture,
+            setCaptionInput: this.setCaptionInput,
             setDataFalse: this.setDataFalse,
             setDataTrue: this.setDataTrue,
             setExpandUserGalleryFalse: this.setExpandUserGalleryFalse,

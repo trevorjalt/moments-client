@@ -31,7 +31,7 @@ export default class NavMenu extends Component {
                 >
                     <div className='navigation-menu-wrapper'>
                         <Link
-                            to={`/${user.username}`}
+                            to={'/profile'}
                             className='navigation-link-wrapper'
                             onClick={this.handleNavLinkClick}
                         >

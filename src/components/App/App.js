@@ -61,7 +61,7 @@ export default class App extends Component {
                     component={PostUploadRoute}
                 />
                 <PrivateRoute
-                    path={'/:username'}
+                    path={'/profile'}
                     component={ProfileRoute}
                 />
                 <PrivateRoute

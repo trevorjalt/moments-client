@@ -21,7 +21,6 @@ export default class Upload extends Component {
         return new RegExp(pattern, 'i').test(fileName);
     }
 
-
     onChangeFile = (ev) => {
         const { setDataTrue, setDataFalse } = this.context
 
@@ -124,6 +123,7 @@ export default class Upload extends Component {
                             src ={UploadLogo} 
                             alt='upload-button'
                             className='upload-selector-button' 
+
                         />
                     </label>
                     <input
