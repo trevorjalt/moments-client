@@ -152,7 +152,7 @@ export default class ProfileGalleryExpanded extends Component {
                             {profileDisplay.length !== 0
                                 ? <div className='feed-header'>
                                     <img
-                                        alt='current-user-profile-picture'
+                                        alt='current-user-profile'
                                         src={`data:image/${profileDisplay[0].img_type};base64,${buffTo64(profileDisplay[0].img_file.data)}`}
                                         className='feed-profile-picture circular-landscape'
                                     />
@@ -174,7 +174,7 @@ export default class ProfileGalleryExpanded extends Component {
                             aria-label='user post photo'
                         >
                             <img                               
-                                alt='user post photo'
+                                alt='user post'
                                 src={`data:image/${val.img_type};base64,${buffTo64(val.img_file.data)}`}
                             />
                         </div>

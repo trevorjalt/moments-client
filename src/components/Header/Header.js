@@ -11,8 +11,6 @@ export default class Header extends Component {
     static contextType = UserAndNavContext
 
     render() {
-        const { user } = this.context
-
         return (
             <header role='banner'>
                 <div className={this.context.showNav

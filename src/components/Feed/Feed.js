@@ -50,7 +50,7 @@ export default class Feed extends Component {
             return (
                 <div>
                     <img
-                        alt='user-post-photo'
+                        alt='user-post'
                         src={`data:image/${postPhoto.img_type};base64,${buffTo64(postPhoto.img_file.data)}`}
                     />
                 </div>
@@ -68,7 +68,7 @@ export default class Feed extends Component {
             return (
                 <div className='feed-header'>
                     <img
-                        alt='current-user-profile-picture'
+                        alt='current-user-profile'
                         src={`data:image/${userProfilePic.profile_pic_type};base64,${buffTo64(userProfilePic.profile_pic_file.data)}`}
                         className='feed-profile-picture circular-landscape'
                     />

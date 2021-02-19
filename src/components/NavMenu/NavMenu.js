@@ -22,8 +22,6 @@ export default class NavMenu extends Component {
     }
 
     renderLogoutLink() {
-        const { user } = this.context
-
         return (
             <div>
                 <nav 

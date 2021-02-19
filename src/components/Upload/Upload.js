@@ -113,7 +113,7 @@ export default class Upload extends Component {
                         : (<img 
                             src={ImageLogo}
                             className='default-image'
-                            alt='blank-image-logo'
+                            alt='blank-logo'
                         />)
                     }
                 </div>

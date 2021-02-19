@@ -130,7 +130,7 @@ export default class Connection extends Component {
             return (
                 <div className='feed-header'>
                     <img
-                        alt='current-user-profile-picture'
+                        alt='current-user-profile'
                         src={`data:image/${follower.img_type};base64,${buffTo64(follower.img_file.data)}`}
                         className='feed-profile-picture circular-landscape'
                     />
