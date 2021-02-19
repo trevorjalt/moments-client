@@ -10,17 +10,7 @@ body {
 	color: #050505;
 	min-height: 100%;
 	position: relative;
-	/* overflow: hidden; */
 }
-
-/* body.dialogShowing {
-	overflow-y: hidden;
-} */
-
-/* .caption-collapsed {
-	height: 5.6vh;
-	overflow: auto;
-} */
 
 .caption-date {
 	padding: 1vh 0 10vh 0;
@@ -37,15 +27,12 @@ body {
 .caption-wrapper {
 	display: flex;
 	flex-direction: row;
-	/* flex-wrap: wrap; */
 	margin: 3vh 3vw 1vh 3vw;
-	/* font-size: 3.3vw; */
 	text-align: left;
 }
 
 .circular-landscape {
     border-radius: 50%;
-    /* border: solid red; */
     width: 2.2rem;
     height: 2.2rem;
     margin-left: 3vw;
@@ -66,8 +53,6 @@ code {
 
 .default-image {
     width: 35vh;
-    /* margin-top: 10vh; */
-    /* margin-bottom: 10vh; */
 }
 
 .error-message {
@@ -76,15 +61,9 @@ code {
 }
 
 .feed-container {
-    /* margin-top: 5vh; */
     background-color: #E9EAEC;
     width: 100vw;
     height: 60vh;
-	/* position: relative; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
 }
 
 .feed-container img {
@@ -116,8 +95,7 @@ code {
 }
 
 .feed-wrapper {
-	background: white;
-	
+	background: white;	
 }
 
 .feed-wrapper img {
@@ -156,12 +134,6 @@ h1 {
 }
 
 h2 {
-	/* background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif); */
-	/* background-image: url(https://media.giphy.com/media/SS8pVIhR4vHU2rANmO/giphy.gif); */
-	/* background-size: cover; */
-	/* color: transparent; */
-	/* -moz-background-clip: text; */
-	/* -webkit-background-clip: text; */
 	font-size: 8vh;
 	font-weight: bold;
 	margin-top: 20vh;
@@ -180,7 +152,6 @@ input, textarea, select {
 	flex-direction: column;
 	background-color: #F2F2F2;
     width: 100vw;
-	/* height: 5vh; */
 	border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -214,39 +185,6 @@ input:focus, textarea:focus, select:focus {
     margin: 6vh 0 3vh 0;
 }
 
-
-/* html {
-	height: 100%;
-} */
-
-/* main {
-	padding-bottom: 10vh;
-} */
-
-
-/* styling my button */
-
-/* .white-mode {
-	text-decoration: none;
-	padding: 7px 10px;
-	background-color: #122;
-	border-radius: 3px;
-	color: #FFF;
-	transition: .35s ease-in-out;
-	position: absolute;
-	left: 15px;
-	bottom: 15px;
-	font-family: "Montserrat";
-}
-
-.white-mode:hover {
-	background-color: #FFF;
-	color: #122;
-} */
-
-/* .no-outline:focus {
-	outline: none;
-} */
 
 @media all and (min-width: 500px) {
     .default-image {

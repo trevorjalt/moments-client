@@ -12,11 +12,11 @@ import PostUploadRoute from '../../routes/PostUploadRoute/PostUploadRoute'
 import ProfileRoute from '../../routes/ProfileRoute/ProfileRoute'
 import ProfilePictureUploadRoute from '../../routes/ProfilePictureUploadRoute/ProfilePictureUploadRoute'
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute'
-// import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import Landing from '../Landing/Landing'
 import NavMenu from '../NavMenu/NavMenu'
 import './App.css'
+
 
 export default class App extends Component {
     static contextType = MomentsContext
@@ -93,7 +93,6 @@ export default class App extends Component {
                     )}
                     {this.renderRoutes()} 
                 </main>
-                {/* <Footer /> */}
             </div>
         )
     }

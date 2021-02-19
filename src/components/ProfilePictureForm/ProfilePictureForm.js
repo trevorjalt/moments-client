@@ -14,10 +14,6 @@ export default class ProfilePictureForm extends Component {
         currentProfilePicture: {},
     }
 
-    // this component did mount sets the state of currentProfilePicture allowing us 
-    // to run a check for profile pictures uploads: if one exists, the client makes a 
-    // patch request for the existing profile picture.  If it doesn't, the client makes 
-    // a post request. 
     componentDidMount() {
         MomentsApiService.getProfilePicture()
             .then(res => this.setState({ currentProfilePicture: res }))

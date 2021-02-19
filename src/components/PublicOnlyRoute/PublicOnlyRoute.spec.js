@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Redirect } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import PublicOnlyRoute from './PublicOnlyRoute'
 import LandingRoute from '../../routes/LandingRoute/LandingRoute'
+
 
 describe(`PublicOnlyRoute Component`, () => {
     const props = {

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserAndNavContext from '../../contexts/UserAndNavContext'
 import './NavNewPost.css'
 
+
 export default class NavNewPost extends Component {
     static contextType = UserAndNavContext
 

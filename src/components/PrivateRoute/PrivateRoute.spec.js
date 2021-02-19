@@ -6,6 +6,7 @@ import { MomentsProvider } from '../../contexts/MomentsContext'
 import PrivateRoute from './PrivateRoute'
 import ProfileRoute from '../../routes/ProfileRoute/ProfileRoute'
 
+
 describe(`PrivateRoute Component`, () => {
     const props = {
         component: <ProfileRoute /> 

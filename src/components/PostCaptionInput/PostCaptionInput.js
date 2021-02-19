@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MomentsContext from '../../contexts/MomentsContext'
 import './PostCaptionInput.css'
 
+
 export default class PostCaption extends Component {
     static contextType = MomentsContext
 
@@ -25,7 +26,6 @@ export default class PostCaption extends Component {
                     <label 
                         htmlFor='caption-input'
                         aria-label='caption-input'
-                        // className='caption-label'
                     />
                     <textarea
                         id='caption_input'

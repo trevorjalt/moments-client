@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from '../../components/LoginForm/LoginForm'
 
+
 export default class LoginRoute extends Component {
     static defaultProps = {
         location: {},

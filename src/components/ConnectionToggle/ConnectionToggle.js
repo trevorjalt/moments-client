@@ -3,6 +3,7 @@ import MomentsContext from '../../contexts/MomentsContext'
 import MomentsApiService from '../../services/moments-api-service'
 import './ConnectionToggle.css'
 
+
 export default class ConnectionToggle extends Component {
     static contextType = MomentsContext
 

@@ -4,6 +4,7 @@ import UserAndNavContext from '../../contexts/UserAndNavContext'
 import TokenService from '../../services/token-service'
 import './NavMenu.css'
 
+
 export default class NavMenu extends Component {
     static contextType = UserAndNavContext
 
@@ -75,11 +76,9 @@ export default class NavMenu extends Component {
         return (
             <nav 
                 role='navigation'
-                // review this conditional
                 className={this.context.showNav
                     ? 'navigation'
                     : 'navigation-closed'}
-                // className='navigation'
             >
                 <div className='navigation-menu-wrapper'>
                     <Link

@@ -5,6 +5,7 @@ import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import PostCaptionInput from './PostCaptionInput'
 
+
 describe(`PostCaptionInput Component`, () => {
     it('renders without crashing', () => {
         const div = document.createElement('div')

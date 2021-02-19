@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './NotFound.css'
 
+
 export default class NotFoundRoute extends Component {
     render() {
         return (

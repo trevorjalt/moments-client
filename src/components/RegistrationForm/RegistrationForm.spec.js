@@ -5,6 +5,7 @@ import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import RegistrationForm from './RegistrationForm'
 
+
 describe(`RegistrationForm Component`, () => {
     const props = {
         user: {

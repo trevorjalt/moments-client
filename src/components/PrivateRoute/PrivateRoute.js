@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import UserAndNavContext from '../../contexts/UserAndNavContext'
 
+
 export default function PrivateRoute({ component, ...props }) {
     const Component = component
     return (

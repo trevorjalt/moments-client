@@ -1,5 +1,6 @@
 import { format as formatDate, formatDistance } from 'date-fns'
 
+
 export function buffTo64(buffer) {
     let binary = "";
     const bytes = new Uint8Array(buffer);
@@ -8,6 +9,7 @@ export function buffTo64(buffer) {
     }
     return window.btoa(binary);
 }
+
 
 export function NiceDate({ date, format='yyyy M d h m s' }) {
     let formatted = formatDate(date, format)

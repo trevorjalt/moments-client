@@ -5,6 +5,7 @@ import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import NavHamburger from './NavHamburger'
 
+
 describe(`NavHamburger Component`, () => {
     it('renders without crashing', () => {
         const div = document.createElement('div')

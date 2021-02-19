@@ -57,11 +57,11 @@
     z-index: 100;
 }
 
-
 .posts-text {
     font-weight: bold;
     font-size: 4vh;
 }
+
 
 @media all and (min-width: 500px) {
     .username-logo {

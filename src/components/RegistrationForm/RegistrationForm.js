@@ -4,6 +4,7 @@ import AuthApiService from '../../services/auth-api-service'
 import UserAndNavContext from '../../contexts/UserAndNavContext'
 import './RegistrationForm.css'
 
+
 export default class RegistrationForm extends Component {
     static defaultProps = {
         onRegistrationSuccess: () => { }

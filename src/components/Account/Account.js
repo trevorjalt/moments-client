@@ -4,6 +4,7 @@ import UserAndNavContext from '../../contexts/UserAndNavContext'
 import ProfilePicture from '../ProfilePicture/ProfilePicture'
 import './Account.css'
 
+
 export default class Account extends Component {
     static contextType = UserAndNavContext
 

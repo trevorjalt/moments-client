@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import UserAndNavContext from '../../contexts/UserAndNavContext'
 import './NavHamburger.css'
 
+
 export default class NavHamburger extends Component {
     static contextType = UserAndNavContext
 
     handleKeyPressed = (ev) => {
         if (ev.key === 'Enter') {
             this.handleNavClick()
-            // this.context.setShowNav()
         }
     }
 

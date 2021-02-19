@@ -6,6 +6,7 @@ import NavHamburger from '../NavHamburger/NavHamburger'
 import NavNewPost from '../NavNewPost/NavNewPost'
 import './Header.css'
 
+
 export default class Header extends Component {
     static contextType = UserAndNavContext
 

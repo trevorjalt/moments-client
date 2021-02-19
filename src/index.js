@@ -6,6 +6,7 @@ import { MomentsProvider } from './contexts/MomentsContext'
 import App from './components/App/App';
 import './index.css';
 
+
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>

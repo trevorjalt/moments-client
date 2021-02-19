@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import MomentsContext from '../../contexts/MomentsContext'
 import MomentsApiService from '../../services/moments-api-service'
-import { buffTo64, NiceDate } from '../Utils/Utils'
+import { buffTo64 } from '../Utils/Utils'
 import MomentsLogo from './images/moments-logo.png'
-import { format, parseISO } from 'date-fns'
 import './ProfileGallery.css'
 
 

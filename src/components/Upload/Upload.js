@@ -4,6 +4,7 @@ import ImageLogo from './images/image-logo.png'
 import UploadLogo from './images/image-upload-logo.png'
 import './Upload.css'
 
+
 export default class Upload extends Component {
     static contextType = MomentsContext
 
@@ -46,7 +47,6 @@ export default class Upload extends Component {
                         error: 'File Size Larger Than 1MB',
                     })
                 }
-                // setData()
             }).catch(err=>{
                 console.log('ERROR:-', err)
                 setDataFalse()
@@ -66,7 +66,7 @@ export default class Upload extends Component {
     readFile = (file) => {
         return new Promise( (resolve, reject) => {
             const reader = new FileReader();
-            // read the image received via FileReader and later save it to state
+            
             reader.onload = function(ev) {
                 const img = new Image()
 

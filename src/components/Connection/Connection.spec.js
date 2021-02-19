@@ -5,6 +5,7 @@ import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import Connection from './Connection'
 
+
 describe(`Connection Component`, () => {
     const props = {
         user: {

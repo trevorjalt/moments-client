@@ -7,7 +7,6 @@
     }
 }
 
-/* not using */
 @keyframes slideOutFromBottom {
     from {
       transform: translateY(0);
@@ -25,33 +24,8 @@
     position: fixed;
     text-align: left;
     animation: .5s ease-in-out 0s 1 slideInFromTop;
-    /* animation-direction: reverse; */
     z-index: 50;
 }
-
-/* not using  */
-.navigation-closed {
-    top: 15vh;
-    height: 100vh;
-    /* max-height: 100vh; */
-    width: 100vw;
-    background-color: #050505;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: left;
-    align-items: left; */
-    text-align: left;
-    /* transition: 15vh 4s; */
-    animation: .75s ease-in 0s 1 slideInFromTop;
-    animation-direction: reverse;
-    /* transition: visibility 0s linear 1s; */
-    z-index: 50;
-    /* border: #A7ABB4;
-    border-style: solid; */
-    /* overflow-y: hidden; */
-}
-
 
 .navigation-link-wrapper {
     width: 85vw;

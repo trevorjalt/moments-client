@@ -5,6 +5,7 @@ import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import ProfileGalleryExpanded from './ProfileGalleryExpanded'
 
+
 describe(`ProfileGalleryExpanded Component`, () => {
     const props = {
         user: {

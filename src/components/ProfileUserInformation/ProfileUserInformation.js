@@ -4,6 +4,7 @@ import UserCount from '../UserCount/UserCount'
 import ProfilePicture from '../ProfilePicture/ProfilePicture'
 import './ProfileUserInformation.css'
 
+
 export default class ProfileUserInformation extends Component {
     static contextType = UserAndNavContext
 
@@ -15,7 +16,6 @@ export default class ProfileUserInformation extends Component {
         const { user } = this.context
         const { error } = this.state
         const { requestedUser, requestedUserInfo } = this.props
-
         
         return (
             <div>

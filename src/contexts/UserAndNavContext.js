@@ -5,7 +5,6 @@ import IdleService from '../services/idle-service'
 
 const UserAndNavContext = React.createContext({
     error: null,
-    // isLoggedIn: null,
     showNav: false,
     user: {},
     clearError: () => { },
@@ -52,10 +51,6 @@ export class UserAndNavProvider extends Component {
             TokenService.queueCallbackBeforeExpiry(() => {
                 this.fetchRefreshToken()
             })
-
-            // if (!this.state.isLoggedIn) {
-            //     this.setIsLoggedIn()
-            // }
         }
     }
 
@@ -85,10 +80,6 @@ export class UserAndNavProvider extends Component {
         this.setState({ user })
     }
 
-    // setIsLoggedIn = () => {
-    //     this.setState({ isLoggedIn: !this.state.isLoggedIn })
-    // }
-
     processLogin = authToken => {
         TokenService.saveAuthToken(authToken)
         const jwtPayload = TokenService.parseAuthToken()
@@ -104,14 +95,12 @@ export class UserAndNavProvider extends Component {
         TokenService.queueCallbackBeforeExpiry(() => {
             this.fetchRefreshToken()
         })
-        // this.setIsLoggedIn(true)
     }
 
     processLogout = () => {
         TokenService.clearAuthToken()
         TokenService.clearCallbackBeforeExpiry()
         IdleService.unRegisterIdleResets()
-        // this.setIsLoggedIn(false)
         this.setUser({})
 
     }
@@ -120,7 +109,6 @@ export class UserAndNavProvider extends Component {
         TokenService.clearAuthToken()
         TokenService.clearCallbackBeforeExpiry()
         IdleService.unRegisterIdleResets()
-        // this.setIsLoggedIn(false)
         this.setUser({ idle: true })
     }
 
@@ -140,7 +128,6 @@ export class UserAndNavProvider extends Component {
     render() {
         const value = {
             error: this.state.error,
-            // isLoggedIn: this.state.isLoggedIn,
             showNav: this.state.showNav,
             user: this.state.user,
             clearError: this.clearError,

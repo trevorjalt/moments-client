@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ConnectionNav.css'
 
+
 export default class ConnectionNav extends Component {
 
     state = {
@@ -41,8 +42,6 @@ export default class ConnectionNav extends Component {
             </div>
         )
     }
-
-
 
     render() {
         const { error } = this.state

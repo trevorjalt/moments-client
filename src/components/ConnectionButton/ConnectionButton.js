@@ -3,8 +3,6 @@ import MomentsContext from '../../contexts/MomentsContext'
 import './ConnectionButton.css'
 
 
-
-
 export default class ConnectionButton extends Component {
     static contextType = MomentsContext
 

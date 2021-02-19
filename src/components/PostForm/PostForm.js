@@ -29,7 +29,6 @@ export default class PostForm extends Component {
         })
     } 
     
-
     handleClickBack = () => {
         this.context.setShowCaptionInputFalse()
         this.context.setDataFalse()
@@ -96,8 +95,7 @@ export default class PostForm extends Component {
                 <div>
                     <PostCaptionInput />
                     <Upload />
-                </div>
-                
+                </div>                
             </form>
         )
     }

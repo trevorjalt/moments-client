@@ -4,6 +4,7 @@ import MomentsContext from '../../contexts/MomentsContext'
 import MomentsApiService from '../../services/moments-api-service'
 import './UserCount.css'
 
+
 export default class ProfileUserInformation extends Component {
     static contextType = MomentsContext
 

@@ -5,6 +5,7 @@ import ProfilePictureDefault from './images/profile-picture-default.png'
 import { buffTo64 } from '../Utils/Utils'
 import './ProfilePicture.css'
 
+
 export default class ProfilePicture extends Component {
     static contextType = MomentsContext
 

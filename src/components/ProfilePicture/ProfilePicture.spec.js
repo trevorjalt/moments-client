@@ -5,6 +5,7 @@ import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import ProfilePicture from './ProfilePicture'
 
+
 describe(`ProfilePicture Component`, () => {
     it('renders without crashing', () => {
         const div = document.createElement('div')

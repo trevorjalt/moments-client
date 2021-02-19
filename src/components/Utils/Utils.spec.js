@@ -5,6 +5,7 @@ import { UserAndNavProvider } from '../../contexts/UserAndNavContext'
 import { MomentsProvider } from '../../contexts/MomentsContext'
 import { NiceDate } from './Utils'
 
+
 describe(`ConnectionNav Component`, () => {
     const props = {
         date: new Date("February 19, 2020"),

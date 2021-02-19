@@ -6,7 +6,6 @@ import ProfilePictureDefault from '../ProfilePicture/images/profile-picture-defa
 import './ProfileGalleryExpanded.css'
 
 
-
 export default class ProfileGalleryExpanded extends Component {
     static contextType = MomentsContext
 
@@ -119,7 +118,6 @@ export default class ProfileGalleryExpanded extends Component {
             </div>
         )
     }
-
 
     renderGalleryExpanded() {
         const { 
