@@ -79,7 +79,7 @@ export default class ProfileGallery extends Component {
                         <div className='img-container'>
                             <img
                                 className='gallery-img'
-                                alt={val.name}
+                                alt='User gallery photos'
                                 src={`data:image/${val.img_type};base64,${buffTo64(val.img_file.data)}`}
                             />
                         </div>

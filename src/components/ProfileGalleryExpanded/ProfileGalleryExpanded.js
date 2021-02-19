@@ -173,10 +173,10 @@ export default class ProfileGalleryExpanded extends Component {
                         <div 
                             className='feed-container' 
                             tabIndex='0'
-                            aria-label={val.name}
+                            aria-label='user post photo'
                         >
                             <img                               
-                                alt={val.name}
+                                alt='user post photo'
                                 src={`data:image/${val.img_type};base64,${buffTo64(val.img_file.data)}`}
                             />
                         </div>

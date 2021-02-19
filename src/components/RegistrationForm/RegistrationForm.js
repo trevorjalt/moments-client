@@ -180,6 +180,7 @@ export default class RegistrationForm extends Component {
                         defaultValue='Public' 
                         required
                         aria-required='true'
+                        aria-label='privacy'
                     >
                         <option value='Public'>Public</option>                           
                         <option value='Private'>Private</option>

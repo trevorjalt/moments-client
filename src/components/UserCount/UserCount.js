@@ -32,7 +32,6 @@ export default class ProfileUserInformation extends Component {
     render() {
         const { error } = this.state
         const { requestedUser, userCounts } = this.context
-        console.log('counts', userCounts)
 
         let userFollowers = []
         let userFollowing = []

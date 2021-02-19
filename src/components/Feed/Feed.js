@@ -50,6 +50,7 @@ export default class Feed extends Component {
             return (
                 <div>
                     <img
+                        alt='user-post-photo'
                         src={`data:image/${postPhoto.img_type};base64,${buffTo64(postPhoto.img_file.data)}`}
                     />
                 </div>
