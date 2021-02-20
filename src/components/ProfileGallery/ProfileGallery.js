@@ -64,12 +64,12 @@ export default class ProfileGallery extends Component {
 
         if (displayPosts.length !== 0) {
             return (
-                displayPosts.map((val, index) => (
+                displayPosts.map((val) => (
                     <div 
                         key={val.id}
                         onClick={() => this.handleGalleryClick(val.id)}
                         onKeyDown={(ev) => this.handleKeyPressed(ev, val.id)}
-                        tabIndex={index}
+                        tabIndex='0'
                         role='button'
                         aria-label='user-post-clickable'
                         aria-expanded='false'

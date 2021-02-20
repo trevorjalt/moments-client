@@ -1,0 +1,52 @@
+.bold-information {
+    font-weight: bold;
+}
+
+.get-started-wrapper {
+    margin: 2vh 18vw 9vh 18vw;;
+}
+
+.landing {
+    margin-bottom: 7.3vh;
+}
+.landing-information {
+    margin: 0 9vw 0 9vw;
+    padding: 3vw 0 3vw 0;
+}
+
+.landing-information-wrapper {
+    background: #E9EAEC;
+    text-align: left;
+}
+.landing-information-wrapper a, .get-started{
+    text-decoration: none;
+    font-weight: bold;
+    color: #0252A2;
+}
+
+.landing-section-title {
+    color: #0252A2;
+}
+
+.landing-prompt {
+        padding: 9vh 0 1vh 0;
+        background: linear-gradient(to right, #DB0F6B 40%, #602182, #3724F9 60%);
+        background-clip: text;
+        color: transparent;
+        margin: 0;
+        font-size: 3.3vh;
+    
+}
+
+
+@media all and (min-width: 800px) {
+    .landing-information {
+        margin: 0 15vw 0 15vw;
+    }
+}
+
+@media all and (min-width: 1000px) {
+    .landing-information {
+        margin: 0 20vw 0 20vw;
+    }
+}

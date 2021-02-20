@@ -171,6 +171,7 @@ export default class ProfileGalleryExpanded extends Component {
                         <div 
                             className='feed-container' 
                             tabIndex='0'
+                            role='feed'
                             aria-label='user post photo'
                         >
                             <img                               

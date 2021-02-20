@@ -93,6 +93,13 @@ export default class NavMenu extends Component {
                     >
                         Sign up
                     </Link>
+                    <Link
+                        to='/'
+                        className='navigation-link-wrapper'
+                        onClick={this.context.setShowNav}
+                    >
+                        About
+                    </Link>
                 </div>
             </nav>
         )

@@ -99,6 +99,7 @@ export default class Feed extends Component {
                         <div 
                             className='feed-container' 
                             tabIndex='0'
+                            role='feed'
                             aria-label={val.name}
                         >
                             {this.renderPostPhoto(val.id)}
