@@ -39,7 +39,11 @@ export default class Landing extends Component {
                     <div className='landing-information'>
                         <h3 className='landing-section-title'>About</h3>
                         <p><span className='bold-information'>moments</span> is developer  
-                            <a href='https://trevorjalt.github.io/trevorjalt' target='_blank'> 
+                            <a 
+                                href='https://trevorjalt.github.io/trevorjalt' 
+                                target='_blank'
+                                rel='noreferrer'
+                            > 
                             Trevor J Alt’s</a> love letter to Instagram, a social media platform 
                             and passion project designed for ongoing development and 
                             personal educational growth in how to implement a heavily 
@@ -96,7 +100,7 @@ export default class Landing extends Component {
                 >
                     {error && <p>{error.message}</p>}
                 </div>
-                <h2>welcome to moments.</h2>
+                <h2>"it's about the moments"</h2>
                 <img
                     className='moments-icon landing'
                     alt='moments-logo'

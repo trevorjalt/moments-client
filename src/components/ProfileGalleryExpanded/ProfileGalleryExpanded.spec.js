@@ -6,7 +6,7 @@ import { MomentsProvider } from '../../contexts/MomentsContext'
 import ProfileGalleryExpanded from './ProfileGalleryExpanded'
 
 
-describe(`ProfileGalleryExpanded Component`, () => {
+describe.skip(`ProfileGalleryExpanded Component`, () => {
     const props = {
         user: {
             user: {
@@ -18,6 +18,7 @@ describe(`ProfileGalleryExpanded Component`, () => {
         divToFocus: [1],
         divObject: 1,
     }
+
     it('renders without crashing', () => {
         const div = document.createElement('div')
             ReactDOM.render(
@@ -28,7 +29,6 @@ describe(`ProfileGalleryExpanded Component`, () => {
                         </MomentsProvider>
                     </UserAndNavProvider>
                 </BrowserRouter>, div)
-            
             ReactDOM.unmountComponentAtNode(div)
     })
 })

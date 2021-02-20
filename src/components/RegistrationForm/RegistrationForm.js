@@ -165,6 +165,7 @@ export default class RegistrationForm extends Component {
                         required
                         aria-required='true'
                         autoComplete='off'
+                        maxLength='200'
                     >
                     </input>
                 </div>
