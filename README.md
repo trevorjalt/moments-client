@@ -23,6 +23,7 @@ The `moments` backend can be found at: [moments-api](https://github.com/trevorja
   * [frontend](#frontend)
   * [testing](#testing)
   * [production](#production)
+* [release information](#release-information)
 * [setup](#setup)
   * [local setup](#local-setup)
 * [quick start](#quick-start-scripts)
@@ -55,6 +56,24 @@ The `moments` backend can be found at: [moments-api](https://github.com/trevorja
 
 * Deployed via Vercel
 
+## release information.
+
+* In moments (release 1.0), users can:
+  * Create a new account and join the moments community
+  * Submit login credentials for authentication
+  * View account information
+  * Upload a personal Profile Picture
+  * Update a personal Profile Picture
+  * Create posts with an image and caption
+  * View profile posts in a condensed gallery
+  * View profile posts in an expanded gallery
+  * View personal number of followers
+  * View personal number of posts
+  * View personal number of users they are following
+  * View profiles of users who are following them
+  * View profiles of users who they are following
+  * View all moments users’ posts in a feed displayed in most recent order
+  
 ## setup.
 
 ### local setup.
