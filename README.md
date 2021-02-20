@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# moments Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`moments` is developer Trevor J Alt’s love letter to Instagram,  a social media platform and passion project designed for ongoing development and personal educational growth in how to implement a heavily conditionally rendered environment which handles large amounts of data storage and retrieval.  
 
-## Available Scripts
+And really, who doesn’t love scrolling through photos attached with inspirational quotes and song lyrics?
 
-In the project directory, you can run:
+`moments Client` is the frontend for `moments`.  To see `moments` in action, check out [moments](https://moments-live.vercel.app/ "moments").
 
-### `npm start`
+The `moments` backend can be found at: [moments-api](https://github.com/trevorjalt/moments-api/ "moments Api")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`moments` supports the creation of your own user account.  If you'd like to experience moments before signing up, use the demo details below.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### demo credentials
 
-### `npm test`
+* username: kakarot
+* password: Kakarot1!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## table of contents.
 
-### `npm run build`
+* [demo credentials](#democredentials)
+* [a quick look at our lewk](#a-quick-look-at-our-lewk)
+* [the tech](#the-tech)
+  * [frontend](#frontend)
+  * [testing](#testing)
+  * [production](#production)
+* [setup](#setup)
+  * [local setup](#local-setup)
+* [quick start](#quick-start-scripts)
+* [component overview](#component-overview)
+  * [LandingRoute](#LandingRoute)
+  * [LoginRoute](#LoginRoute)
+  * [RegistrationRoute](#RegistrationRoute)
+  * [MyWorkoutsPage](#MyWorkoutsPage)
+  * [NewWorkoutPage](#NewWorkoutPage)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## a quick look at our lewk.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![moment app profile overview](/images/moments-profile.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## the tech.
 
-### `npm run eject`
+### frontend.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* React
+  * Create React App
+  * React Router
+* HTML5
+* CSS3
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### testing.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Jest
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### production.
 
-## Learn More
+* Deployed via Vercel
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## setup.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### local setup.
 
-### Code Splitting
+Clone this repository to your local machine 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+````
+git clone https://github.com/trevorjalt/moments-client benchmark-client
+````
 
-### Analyzing the Bundle Size
+Change directory into the cloned repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+````
+cd moments-client
+````
 
-### Making a Progressive Web App
+Make a fresh start of the git history for this project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```` 
+rm -rf .git && git init
+````
 
-### Advanced Configuration
+Install the node dependencies 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+````
+npm install
+````
 
-### Deployment
+Follow the [setup](https://github.com/trevorjalt/moments-api#setup "setup") instructions to get `moments Api` up and running.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## quick start scripts.
 
-### `npm run build` fails to minify
+Run the benchmark tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+````
+npm t
+````
+
+Start the application
+
+````
+npm start
+````
+
+## component overview.
+
+### LandingRoute
+
+![moments landing route](/images/moments-landing.png)
+
+### LoginRoute
+
+![moments login route](/images/moments-login.png)
+
+### RegistrationRoute
+
+![moments registration route](/images/moments-register.png)
+
+### AccountRoute
+
+![moments account route](/images/moments-account.png)
+
+### FeedRoute
+
+![moments feed route](/images/moments-feed.png)
+
+### ProfileRoute
+
+![moments profile route](/images/moments-profile-gogeta.png)
+
+![moments profile expanded route](/images/moments-gallery-expanded.png)
+
+![moments no pictures](/images/moments-no-posts.png)
+
+### ConnectionRoute
+
+![moments connection route](/images/moments-connections.png)
+
+### The Uploader
+
+![moments uploader photo](/images/moments-upload.png)
+
+![moments uploader caption](/images/moments-caption.png)
+
+### The Nav
+
+![moments nav](/images/moments-nav.png)
+
+## "it's all about the moments" 
