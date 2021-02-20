@@ -72,7 +72,7 @@ The `moments` backend can be found at: [moments-api](https://github.com/trevorja
   * View personal number of users they are following
   * View profiles of users who are following them
   * View profiles of users who they are following
-  * View all moments users’ posts in a feed displayed in most recent order
+  * View all moments users’ posts minus their own in a feed displayed in most recent order
   
 ## setup.
 
@@ -138,7 +138,7 @@ npm start
 
 ### FeedRoute
 
-![moments feed route](/images/moments-feed.png)
+![moments feed route](/images/moments-feed.jpg)
 
 ### ProfileRoute
 
