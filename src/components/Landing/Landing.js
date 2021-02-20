@@ -34,6 +34,7 @@ export default class Landing extends Component {
     renderMomentsInfo() {
         return (
             <div>
+                <hr className='gradient-ruler' /> 
                 <div className='landing-information-wrapper'>
                     <div className='landing-information'>
                         <h3 className='landing-section-title'>About</h3>
@@ -74,6 +75,7 @@ export default class Landing extends Component {
                             are working to implement this in a future release.</p>
                     </div>
                 </div>
+                <hr className='gradient-ruler' /> 
                 <div>
                     <h3 className='landing-prompt'>Ready to get in the moment?</h3>
                 </div>

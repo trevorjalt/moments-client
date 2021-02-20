@@ -1,0 +1,58 @@
+.boldly {
+    font-weight: bold;
+    margin-right: 1vw;
+}
+
+.credential {
+    margin: 0 0 .5vh 3vw;
+}
+
+.credentials-title {
+    color: #0252A2;
+    margin: 0 0 2vh 3vw;
+    font-size: 2.2vh;
+}
+
+.credential-wrapper {
+    text-align: left;
+}
+
+.demo-wrapper {
+    background: #E9EAEC;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.demo-wrapper img {
+    margin: 0;
+}
+
+.gradient-ruler {
+    height: 1px;
+    width: 100vw;
+    background: linear-gradient(to right, #DB0F6B 40%, #602182, #3724F9 60%);
+    margin: 0
+}
+
+.moments-icon-demo {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.ruler-top {
+    margin-top: 3.5vh;
+}
+
+.slight-indent {
+    margin-left: .2rem;
+}
+
+@media all and (min-width: 600px) {
+    .moments-icon-demo {
+        height: 5rem;
+        width: 5rem;
+    }
+}

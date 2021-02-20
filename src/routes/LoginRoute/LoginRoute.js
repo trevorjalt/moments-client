@@ -23,7 +23,7 @@ export default class LoginRoute extends Component {
                 aria-live='polite'
                 aria-relevant='all'
             >
-                <h2>login</h2>
+                <h2>login</h2>             
                 <LoginForm
                     onLoginSuccess={this.handleLoginSuccess}
                 />
