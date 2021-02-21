@@ -46,9 +46,9 @@ export default class Landing extends Component {
                             > 
                             Trevor J Alt’s</a> love letter to Instagram, a social media platform 
                             and passion project designed for ongoing development and 
-                            personal educational growth in how to implement a heavily 
-                            conditionally rendered environment which handles large amounts 
-                            of data storage and retrieval.</p>
+                            personal educational growth in image processing and how to implement 
+                            a heavily conditionally rendered environment which handles large 
+                            amounts of data storage and retrieval.</p>
                         <p>And really, who doesn’t love scrolling through photos attached 
                             with inspirational quotes and song lyrics?</p>
                         <h3 className='landing-section-title'>Features</h3>
