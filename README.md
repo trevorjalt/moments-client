@@ -73,6 +73,7 @@ The `moments` backend can be found at: [moments-api](https://github.com/trevorja
   * View profiles of users who are following them
   * View profiles of users who they are following
   * View all moments users’ posts minus their own in a feed displayed in most recent order
+  * View a moments user's profile by clicking on an individual post's header in the feed
   
 ## setup.
 

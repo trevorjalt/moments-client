@@ -4,6 +4,7 @@ import MomentsApiService from '../../services/moments-api-service';
 import { buffTo64, NiceDate } from '../Utils/Utils'
 import { parseISO } from 'date-fns'
 import ProfilePictureDefault from '../ProfilePicture/images/profile-picture-default.png'
+import { Link } from 'react-router-dom';
 
 
 export default class Feed extends Component {
@@ -20,6 +21,12 @@ export default class Feed extends Component {
             .then(res => setUserFeed(res))
             .catch(err => this.setState({ error: err}))
 
+    }
+
+    handleClick = val => {
+        const { setRequestedUserTrue, setRequestedUserInfo } = this.context
+        setRequestedUserTrue()
+        setRequestedUserInfo(val)
     }
 
     renderCaption(props) {
@@ -51,7 +58,7 @@ export default class Feed extends Component {
                 <div>
                     <img
                         alt='user-post'
-                        src={`data:image/${postPhoto.img_type};base64,${buffTo64(postPhoto.img_file.data)}`}
+                        src={`data:image/${postPhoto.photo_img_type};base64,${buffTo64(postPhoto.photo_img_file.data)}`}
                     />
                 </div>
             )
@@ -63,17 +70,20 @@ export default class Feed extends Component {
 
         let userProfilePic = userFeed.find(el => el.id === props)
 
-
-        if (userProfilePic && userProfilePic.profilepic_type !== null) {
+        if (userProfilePic && userProfilePic.img_type !== null) {
             return (
-                <div className='feed-header'>
+                <Link
+                    to={'profile'}
+                    className='feed-header'
+                    onClick={() => this.handleClick(userProfilePic)}
+                >
                     <img
                         alt='current-user-profile'
-                        src={`data:image/${userProfilePic.profile_pic_type};base64,${buffTo64(userProfilePic.profile_pic_file.data)}`}
+                        src={`data:image/${userProfilePic.img_type};base64,${buffTo64(userProfilePic.img_file.data)}`}
                         className='feed-profile-picture circular-landscape'
                     />
                     <span className='feed-username'>{userProfilePic.username}</span>
-                </div>
+                </Link>
             )
         } else {
             return (
@@ -90,7 +100,7 @@ export default class Feed extends Component {
 
     renderUserFeed() {
         const { userFeed } = this.context
- 
+        console.log('user feed', userFeed)
         if (userFeed.length !== 0 ) {
             return (
                 userFeed.map((val) => (
@@ -100,17 +110,17 @@ export default class Feed extends Component {
                             className='feed-container' 
                             tabIndex='0'
                             role='feed'
-                            aria-label={val.name}
+                            aria-label='user profile'
                         >
                             {this.renderPostPhoto(val.id)}
                         </div>
                         <div className='feed-post-information-wrapper'>
                             <div className='caption-wrapper'>
-                                {this.renderCaption(val.id)}
+                                {this.renderCaption(val.photo_id)}
                             </div>
                             <div className='date-wrapper'>
                                 <span className='caption-date'>
-                                    <NiceDate date={parseISO(val.date_created)} />
+                                    <NiceDate date={parseISO(val.photo_date_created)} />
                                 </span>
                             </div>
                         </div>

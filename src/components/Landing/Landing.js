@@ -70,6 +70,8 @@ export default class Landing extends Component {
                             <li>View profiles of users who they are following</li>
                             <li>View all moments users’ posts minus their own in a 
                                 feed displayed with most recent posts first</li>
+                            <li>View a moments user's profile by clicking on an
+                                individual post's header in the feed</li>
                         </ul>
                         <h3 className='landing-section-title'>Privacy Label</h3>
                         <p>The <span className='bold-information'>moments’</span>
