@@ -43,8 +43,7 @@ export default class Landing extends Component {
                                 href='https://trevorjalt.github.io/trevorjalt' 
                                 target='_blank'
                                 rel='noreferrer'
-                            > 
-                            Trevor J Alt’s</a> love letter to Instagram, a social media platform 
+                            > Trevor J Alt’s</a> love letter to Instagram, a social media platform 
                             and passion project designed for ongoing development and 
                             personal educational growth in image processing and how to implement 
                             a heavily conditionally rendered environment which handles large 
