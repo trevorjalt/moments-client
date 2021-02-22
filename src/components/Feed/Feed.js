@@ -51,7 +51,7 @@ export default class Feed extends Component {
     renderPostPhoto(props) {
         const { userFeed } = this.context
 
-        let postPhoto = userFeed.find(el => el.id === props)
+        let postPhoto = userFeed.find(el => el.photo_id === props)
 
         if (postPhoto) {
             return (
@@ -103,8 +103,8 @@ export default class Feed extends Component {
 
         if (userFeed.length !== 0 ) {
             return (
-                userFeed.map((val) => (
-                    <div key={val.id} className='feed-wrapper'>
+                userFeed.map((val, index) => (
+                    <div key={index} className='feed-wrapper'>
                         {this.renderProfilePictures(val.id)}
                         <div 
                             className='feed-container' 
@@ -112,7 +112,7 @@ export default class Feed extends Component {
                             role='feed'
                             aria-label='user profile'
                         >
-                            {this.renderPostPhoto(val.id)}
+                            {this.renderPostPhoto(val.photo_id)}
                         </div>
                         <div className='feed-post-information-wrapper'>
                             <div className='caption-wrapper'>
