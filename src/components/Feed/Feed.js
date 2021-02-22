@@ -100,7 +100,7 @@ export default class Feed extends Component {
 
     renderUserFeed() {
         const { userFeed } = this.context
-        console.log('user feed', userFeed)
+
         if (userFeed.length !== 0 ) {
             return (
                 userFeed.map((val) => (
