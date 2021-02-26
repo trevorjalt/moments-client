@@ -31,8 +31,12 @@ The `moments` backend can be found at: [moments-api](https://github.com/trevorja
   * [LandingRoute](#LandingRoute)
   * [LoginRoute](#LoginRoute)
   * [RegistrationRoute](#RegistrationRoute)
-  * [MyWorkoutsPage](#MyWorkoutsPage)
-  * [NewWorkoutPage](#NewWorkoutPage)
+  * [AccountRoute](#AccountRought)
+  * [FeedRoute](#FeedRoute)
+  * [ProfileRoute](#ProfileRoute)
+  * [ConnectionRoute](#ConnectionRoute)
+  * [TheUploader](#TheUploader)
+  * [TheNav](#TheNav)
 
 ## a quick look at our lewk.
 

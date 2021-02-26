@@ -6,6 +6,7 @@ import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import AccountRoute from '../../routes/AccountRoute/AccountRoute'
 import ConnectionRoute from '../../routes/ConnectionRoute/ConnectionRoute'
 import FeedRoute from '../../routes/FeedRoute/FeedRoute'
+import LandingRoute from '../../routes/LandingRoute/LandingRoute'
 import LoginRoute from '../../routes/LoginRoute/LoginRoute'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
 import PostUploadRoute from '../../routes/PostUploadRoute/PostUploadRoute'
@@ -13,7 +14,6 @@ import ProfileRoute from '../../routes/ProfileRoute/ProfileRoute'
 import ProfilePictureUploadRoute from '../../routes/ProfilePictureUploadRoute/ProfilePictureUploadRoute'
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute'
 import Header from '../Header/Header'
-import Landing from '../Landing/Landing'
 import NavMenu from '../NavMenu/NavMenu'
 import './App.css'
 
@@ -34,7 +34,7 @@ export default class App extends Component {
                 <PublicOnlyRoute
                     exact
                     path={'/'}
-                    component={Landing}
+                    component={LandingRoute}
                 />
                 <PublicOnlyRoute
                     path={'/login'}
