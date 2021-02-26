@@ -31,12 +31,12 @@ The `moments` backend can be found at: [moments-api](https://github.com/trevorja
   * [LandingRoute](#LandingRoute)
   * [LoginRoute](#LoginRoute)
   * [RegistrationRoute](#RegistrationRoute)
-  * [AccountRoute](#AccountRought)
+  * [AccountRoute](#AccountRoute)
   * [FeedRoute](#FeedRoute)
   * [ProfileRoute](#ProfileRoute)
   * [ConnectionRoute](#ConnectionRoute)
-  * [TheUploader](#TheUploader)
-  * [TheNav](#TheNav)
+  * [TheUploader](#The-Uploader)
+  * [TheNav](#The-Nav)
 
 ## a quick look at our lewk.
 
