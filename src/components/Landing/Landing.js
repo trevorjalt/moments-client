@@ -73,7 +73,7 @@ export default class Landing extends Component {
                                 individual post's header in the feed</li>
                         </ul>
                         <h3 className='landing-section-title'>Privacy Label</h3>
-                        <p>The <span className='bold-information'>moments’</span>
+                        <p>The <span className='bold-information'>moments’ </span>
                             developer is committed to only storing data which is 
                             necessary for the basic functionality of the application.</p>
                         <p>In its current release, <span className='bold-information'>moments 
